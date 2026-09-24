@@ -1,0 +1,50 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary dependencies
+.tmp_review_deps/
+
+# =========================
+# VS Code / OS
+# =========================
+.vscode/
+.DS_Store
+Thumbs.db
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Large data files
+# =========================
+
+# Raw datasets
+Data/raw/
+
+# CSV data
+*.csv
+
+# Parquet pipeline outputs
+Data/**/*.parquet
+
+#notebookbackup
+Notebook/archive/
+
+# Rejected rows generated during cleaning
+*.rejected.jsonl
+
+# Other large intermediate formats, if any
+Data/**/*.feather
+
+# =========================
+# Keep metadata / run records
+# =========================
+
+# run_summary.json is intentionally NOT ignored

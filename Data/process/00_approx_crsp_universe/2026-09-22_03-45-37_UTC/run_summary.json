@@ -1,0 +1,17 @@
+{
+  "source_base": "https://raw.githubusercontent.com/asad70/us_symbol_list/main/",
+  "source_files": {
+    "NASDAQ": "nasdaqsym.csv",
+    "NYSE": "nysesym.csv",
+    "AMEX": "amexsym.csv"
+  },
+  "security_records": 11058,
+  "unique_kept_tickers": 9804,
+  "dictionary_file": "approx_common_stock_tickers.txt",
+  "classification": "approximate public-data heuristic; not CRSP",
+  "date_range": null,
+  "unique_authors": null,
+  "unique_threads": null,
+  "status": "complete",
+  "run_directory": "C:\\Users\\eagle\\RedditStock\\Data\\process\\00_approx_crsp_universe\\2026-09-22_03-45-37_UTC"
+}

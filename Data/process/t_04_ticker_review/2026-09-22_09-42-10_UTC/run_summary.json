@@ -1,0 +1,1217 @@
+{
+  "status": "complete",
+  "source": "C:\\Users\\eagle\\RedditStock\\Data\\process\\03_thread_construction\\2026-09-22_03-56-59_UTC\\threads.parquet",
+  "source_size_mtime": [
+    12831312,
+    1790049511116844700
+  ],
+  "ranking_definition": "distinct thread count descending; ticker ascending for ties",
+  "thread_count": 258609,
+  "unique_tickers": 5682,
+  "review_rows": 200,
+  "date_min": "2012-04-11T16:46:43+00:00",
+  "date_max": "2020-08-06T01:21:55+00:00",
+  "unique_authors": null,
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "YOU",
+      "thread_count": 202685,
+      "thread_share": 0.7837507588676341
+    },
+    {
+      "rank": 2,
+      "ticker": "FOR",
+      "thread_count": 176048,
+      "thread_share": 0.6807497032199189
+    },
+    {
+      "rank": 3,
+      "ticker": "ARE",
+      "thread_count": 142391,
+      "thread_share": 0.5506034206079448
+    },
+    {
+      "rank": 4,
+      "ticker": "ALL",
+      "thread_count": 120858,
+      "thread_share": 0.4673387237103117
+    },
+    {
+      "rank": 5,
+      "ticker": "OUT",
+      "thread_count": 114703,
+      "thread_share": 0.4435383145984865
+    },
+    {
+      "rank": 6,
+      "ticker": "MORE",
+      "thread_count": 110962,
+      "thread_share": 0.4290724607418922
+    },
+    {
+      "rank": 7,
+      "ticker": "NOW",
+      "thread_count": 101664,
+      "thread_share": 0.39311856895931696
+    },
+    {
+      "rank": 8,
+      "ticker": "HAS",
+      "thread_count": 100678,
+      "thread_share": 0.3893058632916874
+    },
+    {
+      "rank": 9,
+      "ticker": "GOOD",
+      "thread_count": 95276,
+      "thread_share": 0.36841718579013105
+    },
+    {
+      "rank": 10,
+      "ticker": "ONE",
+      "thread_count": 93341,
+      "thread_share": 0.36093484758844435
+    },
+    {
+      "rank": 11,
+      "ticker": "TIME",
+      "thread_count": 88103,
+      "thread_share": 0.34068033208434356
+    },
+    {
+      "rank": 12,
+      "ticker": "ANY",
+      "thread_count": 87992,
+      "thread_share": 0.3402511126836266
+    },
+    {
+      "rank": 13,
+      "ticker": "POST",
+      "thread_count": 86393,
+      "thread_share": 0.33406803320843437
+    },
+    {
+      "rank": 14,
+      "ticker": "SEE",
+      "thread_count": 80206,
+      "thread_share": 0.31014388517027636
+    },
+    {
+      "rank": 15,
+      "ticker": "WELL",
+      "thread_count": 73277,
+      "thread_share": 0.2833505407777765
+    },
+    {
+      "rank": 16,
+      "ticker": "OVER",
+      "thread_count": 65851,
+      "thread_share": 0.2546353761856703
+    },
+    {
+      "rank": 17,
+      "ticker": "NEXT",
+      "thread_count": 58621,
+      "thread_share": 0.22667811251735245
+    },
+    {
+      "rank": 18,
+      "ticker": "BIG",
+      "thread_count": 54272,
+      "thread_share": 0.20986121906043487
+    },
+    {
+      "rank": 19,
+      "ticker": "CALL",
+      "thread_count": 51731,
+      "thread_share": 0.20003557494132068
+    },
+    {
+      "rank": 20,
+      "ticker": "NEW",
+      "thread_count": 48811,
+      "thread_share": 0.18874439791345235
+    },
+    {
+      "rank": 21,
+      "ticker": "MAN",
+      "thread_count": 46624,
+      "thread_share": 0.1802876156668948
+    },
+    {
+      "rank": 22,
+      "ticker": "VERY",
+      "thread_count": 45546,
+      "thread_share": 0.17611916058605848
+    },
+    {
+      "rank": 23,
+      "ticker": "SOLD",
+      "thread_count": 45248,
+      "thread_share": 0.17496684183458425
+    },
+    {
+      "rank": 24,
+      "ticker": "PLAY",
+      "thread_count": 42316,
+      "thread_share": 0.16362926270934114
+    },
+    {
+      "rank": 25,
+      "ticker": "WORK",
+      "thread_count": 40752,
+      "thread_share": 0.15758152268482536
+    },
+    {
+      "rank": 26,
+      "ticker": "TWO",
+      "thread_count": 38126,
+      "thread_share": 0.14742719704263965
+    },
+    {
+      "rank": 27,
+      "ticker": "HOPE",
+      "thread_count": 36383,
+      "thread_share": 0.14068729239894975
+    },
+    {
+      "rank": 28,
+      "ticker": "LOW",
+      "thread_count": 36242,
+      "thread_share": 0.14014206775479585
+    },
+    {
+      "rank": 29,
+      "ticker": "TELL",
+      "thread_count": 35606,
+      "thread_share": 0.13768275659393137
+    },
+    {
+      "rank": 30,
+      "ticker": "AGO",
+      "thread_count": 35426,
+      "thread_share": 0.13698672513330937
+    },
+    {
+      "rank": 31,
+      "ticker": "EVER",
+      "thread_count": 34879,
+      "thread_share": 0.134871562861308
+    },
+    {
+      "rank": 32,
+      "ticker": "OPEN",
+      "thread_count": 34877,
+      "thread_share": 0.1348638291784122
+    },
+    {
+      "rank": 33,
+      "ticker": "SPY",
+      "thread_count": 33291,
+      "thread_share": 0.12873101864204262
+    },
+    {
+      "rank": 34,
+      "ticker": "CASH",
+      "thread_count": 33218,
+      "thread_share": 0.12844873921634592
+    },
+    {
+      "rank": 35,
+      "ticker": "MOVE",
+      "thread_count": 32284,
+      "thread_share": 0.12483710930400721
+    },
+    {
+      "rank": 36,
+      "ticker": "PAY",
+      "thread_count": 31703,
+      "thread_share": 0.12259047442277725
+    },
+    {
+      "rank": 37,
+      "ticker": "ONCE",
+      "thread_count": 31416,
+      "thread_share": 0.1214806909272299
+    },
+    {
+      "rank": 38,
+      "ticker": "FREE",
+      "thread_count": 31301,
+      "thread_share": 0.1210360041607214
+    },
+    {
+      "rank": 39,
+      "ticker": "LOVE",
+      "thread_count": 30112,
+      "thread_share": 0.11643832967916816
+    },
+    {
+      "rank": 40,
+      "ticker": "RUN",
+      "thread_count": 29902,
+      "thread_share": 0.11562629297510914
+    },
+    {
+      "rank": 41,
+      "ticker": "TRUE",
+      "thread_count": 28778,
+      "thread_share": 0.11127996318766942
+    },
+    {
+      "rank": 42,
+      "ticker": "BIT",
+      "thread_count": 28634,
+      "thread_share": 0.1107231380191718
+    },
+    {
+      "rank": 43,
+      "ticker": "ELSE",
+      "thread_count": 28407,
+      "thread_share": 0.10984536501049848
+    },
+    {
+      "rank": 44,
+      "ticker": "LMAO",
+      "thread_count": 26642,
+      "thread_share": 0.10302038985495478
+    },
+    {
+      "rank": 45,
+      "ticker": "BRO",
+      "thread_count": 26588,
+      "thread_share": 0.10281158041676818
+    },
+    {
+      "rank": 46,
+      "ticker": "HUGE",
+      "thread_count": 25000,
+      "thread_share": 0.0966710361975028
+    },
+    {
+      "rank": 47,
+      "ticker": "HES",
+      "thread_count": 24828,
+      "thread_share": 0.09600593946846397
+    },
+    {
+      "rank": 48,
+      "ticker": "EDIT",
+      "thread_count": 24456,
+      "thread_share": 0.09456747444984513
+    },
+    {
+      "rank": 49,
+      "ticker": "KIND",
+      "thread_count": 23773,
+      "thread_share": 0.09192642174092935
+    },
+    {
+      "rank": 50,
+      "ticker": "FULL",
+      "thread_count": 22772,
+      "thread_share": 0.08805571345158135
+    },
+    {
+      "rank": 51,
+      "ticker": "COST",
+      "thread_count": 21540,
+      "thread_share": 0.08329176478776841
+    },
+    {
+      "rank": 52,
+      "ticker": "JOB",
+      "thread_count": 20886,
+      "thread_share": 0.08076285048084174
+    },
+    {
+      "rank": 53,
+      "ticker": "THO",
+      "thread_count": 20441,
+      "thread_share": 0.07904210603652619
+    },
+    {
+      "rank": 54,
+      "ticker": "GAIN",
+      "thread_count": 20328,
+      "thread_share": 0.07860515295291347
+    },
+    {
+      "rank": 55,
+      "ticker": "EASY",
+      "thread_count": 20298,
+      "thread_share": 0.07848914770947647
+    },
+    {
+      "rank": 56,
+      "ticker": "AMD",
+      "thread_count": 19996,
+      "thread_share": 0.07732136159221063
+    },
+    {
+      "rank": 57,
+      "ticker": "PER",
+      "thread_count": 19968,
+      "thread_share": 0.07721309003166943
+    },
+    {
+      "rank": 58,
+      "ticker": "STAY",
+      "thread_count": 19417,
+      "thread_share": 0.07508246039387648
+    },
+    {
+      "rank": 59,
+      "ticker": "LIVE",
+      "thread_count": 19112,
+      "thread_share": 0.07390307375226693
+    },
+    {
+      "rank": 60,
+      "ticker": "FACT",
+      "thread_count": 19073,
+      "thread_share": 0.07375226693579884
+    },
+    {
+      "rank": 61,
+      "ticker": "CHINA",
+      "thread_count": 18776,
+      "thread_share": 0.0726038150257725
+    },
+    {
+      "rank": 62,
+      "ticker": "CARE",
+      "thread_count": 18196,
+      "thread_share": 0.07036104698599044
+    },
+    {
+      "rank": 63,
+      "ticker": "WISH",
+      "thread_count": 18061,
+      "thread_share": 0.06983902339052392
+    },
+    {
+      "rank": 64,
+      "ticker": "PLAN",
+      "thread_count": 17908,
+      "thread_share": 0.06924739664899521
+    },
+    {
+      "rank": 65,
+      "ticker": "SIDE",
+      "thread_count": 17827,
+      "thread_share": 0.06893418249171529
+    },
+    {
+      "rank": 66,
+      "ticker": "GAME",
+      "thread_count": 17804,
+      "thread_share": 0.06884524513841359
+    },
+    {
+      "rank": 67,
+      "ticker": "WOW",
+      "thread_count": 17507,
+      "thread_share": 0.06769679322838726
+    },
+    {
+      "rank": 68,
+      "ticker": "FUN",
+      "thread_count": 17355,
+      "thread_share": 0.06710903332830644
+    },
+    {
+      "rank": 69,
+      "ticker": "BEAR",
+      "thread_count": 17128,
+      "thread_share": 0.06623126031963311
+    },
+    {
+      "rank": 70,
+      "ticker": "RIDE",
+      "thread_count": 17065,
+      "thread_share": 0.06598764930841541
+    },
+    {
+      "rank": 71,
+      "ticker": "TSLA",
+      "thread_count": 17018,
+      "thread_share": 0.0658059077603641
+    },
+    {
+      "rank": 72,
+      "ticker": "ONES",
+      "thread_count": 16722,
+      "thread_share": 0.06466132269178566
+    },
+    {
+      "rank": 73,
+      "ticker": "MIND",
+      "thread_count": 16712,
+      "thread_share": 0.06462265427730667
+    },
+    {
+      "rank": 74,
+      "ticker": "GOLD",
+      "thread_count": 16619,
+      "thread_share": 0.06426303802265196
+    },
+    {
+      "rank": 75,
+      "ticker": "LINK",
+      "thread_count": 16462,
+      "thread_share": 0.06365594391533164
+    },
+    {
+      "rank": 76,
+      "ticker": "TECH",
+      "thread_count": 16420,
+      "thread_share": 0.06349353657451984
+    },
+    {
+      "rank": 77,
+      "ticker": "BEAT",
+      "thread_count": 16258,
+      "thread_share": 0.06286710825996002
+    },
+    {
+      "rank": 78,
+      "ticker": "PUMP",
+      "thread_count": 16171,
+      "thread_share": 0.06253069305399271
+    },
+    {
+      "rank": 79,
+      "ticker": "HOME",
+      "thread_count": 15985,
+      "thread_share": 0.06181146054468328
+    },
+    {
+      "rank": 80,
+      "ticker": "COOL",
+      "thread_count": 15887,
+      "thread_share": 0.06143251008278908
+    },
+    {
+      "rank": 81,
+      "ticker": "TALK",
+      "thread_count": 15882,
+      "thread_share": 0.06141317587554958
+    },
+    {
+      "rank": 82,
+      "ticker": "DATA",
+      "thread_count": 15340,
+      "thread_share": 0.059317347810787714
+    },
+    {
+      "rank": 83,
+      "ticker": "AMP",
+      "thread_count": 14560,
+      "thread_share": 0.056301211481425625
+    },
+    {
+      "rank": 84,
+      "ticker": "DEEP",
+      "thread_count": 14121,
+      "thread_share": 0.05460366808579748
+    },
+    {
+      "rank": 85,
+      "ticker": "HEAR",
+      "thread_count": 14039,
+      "thread_share": 0.05428658708706967
+    },
+    {
+      "rank": 86,
+      "ticker": "SAVE",
+      "thread_count": 13251,
+      "thread_share": 0.05123951602612438
+    },
+    {
+      "rank": 87,
+      "ticker": "SAFE",
+      "thread_count": 12977,
+      "thread_share": 0.05018000146939975
+    },
+    {
+      "rank": 88,
+      "ticker": "IMO",
+      "thread_count": 12969,
+      "thread_share": 0.05014906673781655
+    },
+    {
+      "rank": 89,
+      "ticker": "EAT",
+      "thread_count": 12861,
+      "thread_share": 0.04973144786144334
+    },
+    {
+      "rank": 90,
+      "ticker": "FUND",
+      "thread_count": 12783,
+      "thread_share": 0.04942983422850713
+    },
+    {
+      "rank": 91,
+      "ticker": "FAST",
+      "thread_count": 12751,
+      "thread_share": 0.04930609530217433
+    },
+    {
+      "rank": 92,
+      "ticker": "APP",
+      "thread_count": 12496,
+      "thread_share": 0.04832005073295979
+    },
+    {
+      "rank": 93,
+      "ticker": "TYPE",
+      "thread_count": 12146,
+      "thread_share": 0.04696665622619476
+    },
+    {
+      "rank": 94,
+      "ticker": "INFO",
+      "thread_count": 12105,
+      "thread_share": 0.04680811572683085
+    },
+    {
+      "rank": 95,
+      "ticker": "BABY",
+      "thread_count": 11991,
+      "thread_share": 0.04636729580177024
+    },
+    {
+      "rank": 96,
+      "ticker": "GLAD",
+      "thread_count": 11971,
+      "thread_share": 0.04628995897281224
+    },
+    {
+      "rank": 97,
+      "ticker": "HOUR",
+      "thread_count": 11946,
+      "thread_share": 0.04619328793661474
+    },
+    {
+      "rank": 98,
+      "ticker": "AAPL",
+      "thread_count": 11325,
+      "thread_share": 0.04379197939746877
+    },
+    {
+      "rank": 99,
+      "ticker": "FDS",
+      "thread_count": 11216,
+      "thread_share": 0.043370493679647654
+    },
+    {
+      "rank": 100,
+      "ticker": "CAR",
+      "thread_count": 11071,
+      "thread_share": 0.042809801669702136
+    },
+    {
+      "rank": 101,
+      "ticker": "KIDS",
+      "thread_count": 11019,
+      "thread_share": 0.04260872591441133
+    },
+    {
+      "rank": 102,
+      "ticker": "NET",
+      "thread_count": 11015,
+      "thread_share": 0.04259325854861973
+    },
+    {
+      "rank": 103,
+      "ticker": "CAP",
+      "thread_count": 10982,
+      "thread_share": 0.042465652780839025
+    },
+    {
+      "rank": 104,
+      "ticker": "AMZN",
+      "thread_count": 10388,
+      "thread_share": 0.040168748960786364
+    },
+    {
+      "rank": 105,
+      "ticker": "JAN",
+      "thread_count": 10379,
+      "thread_share": 0.04013394738775526
+    },
+    {
+      "rank": 106,
+      "ticker": "MAX",
+      "thread_count": 9714,
+      "thread_share": 0.03756249782490169
+    },
+    {
+      "rank": 107,
+      "ticker": "MSFT",
+      "thread_count": 9457,
+      "thread_share": 0.036568719572791356
+    },
+    {
+      "rank": 108,
+      "ticker": "ELON",
+      "thread_count": 9184,
+      "thread_share": 0.03551307185751463
+    },
+    {
+      "rank": 109,
+      "ticker": "SNAP",
+      "thread_count": 8969,
+      "thread_share": 0.0346817009462161
+    },
+    {
+      "rank": 110,
+      "ticker": "SON",
+      "thread_count": 8965,
+      "thread_share": 0.034666233580424505
+    },
+    {
+      "rank": 111,
+      "ticker": "CUZ",
+      "thread_count": 8828,
+      "thread_share": 0.03413647630206219
+    },
+    {
+      "rank": 112,
+      "ticker": "NVDA",
+      "thread_count": 8697,
+      "thread_share": 0.03362992007238727
+    },
+    {
+      "rank": 113,
+      "ticker": "GROW",
+      "thread_count": 8487,
+      "thread_share": 0.03281788336832825
+    },
+    {
+      "rank": 114,
+      "ticker": "PEAK",
+      "thread_count": 8458,
+      "thread_share": 0.03270574496633914
+    },
+    {
+      "rank": 115,
+      "ticker": "GAINZ",
+      "thread_count": 8374,
+      "thread_share": 0.03238093028471554
+    },
+    {
+      "rank": 116,
+      "ticker": "TIL",
+      "thread_count": 8233,
+      "thread_share": 0.03183570564056162
+    },
+    {
+      "rank": 117,
+      "ticker": "FAT",
+      "thread_count": 8083,
+      "thread_share": 0.031255679423376606
+    },
+    {
+      "rank": 118,
+      "ticker": "STEP",
+      "thread_count": 7951,
+      "thread_share": 0.030745256352253787
+    },
+    {
+      "rank": 119,
+      "ticker": "SELF",
+      "thread_count": 7896,
+      "thread_share": 0.030532580072619282
+    },
+    {
+      "rank": 120,
+      "ticker": "LOAN",
+      "thread_count": 7811,
+      "thread_share": 0.03020389854954777
+    },
+    {
+      "rank": 121,
+      "ticker": "SICK",
+      "thread_count": 7653,
+      "thread_share": 0.029592937600779554
+    },
+    {
+      "rank": 122,
+      "ticker": "MAIN",
+      "thread_count": 7576,
+      "thread_share": 0.029295190809291247
+    },
+    {
+      "rank": 123,
+      "ticker": "TEST",
+      "thread_count": 7552,
+      "thread_share": 0.029202386614541644
+    },
+    {
+      "rank": 124,
+      "ticker": "ONTO",
+      "thread_count": 7458,
+      "thread_share": 0.028838903518439034
+    },
+    {
+      "rank": 125,
+      "ticker": "BILL",
+      "thread_count": 7328,
+      "thread_share": 0.02833621413021202
+    },
+    {
+      "rank": 126,
+      "ticker": "CARS",
+      "thread_count": 7302,
+      "thread_share": 0.028235676252566615
+    },
+    {
+      "rank": 127,
+      "ticker": "AGE",
+      "thread_count": 7267,
+      "thread_share": 0.028100336801890113
+    },
+    {
+      "rank": 128,
+      "ticker": "USER",
+      "thread_count": 6906,
+      "thread_share": 0.026704407039198172
+    },
+    {
+      "rank": 129,
+      "ticker": "FORM",
+      "thread_count": 6884,
+      "thread_share": 0.02661933652734437
+    },
+    {
+      "rank": 130,
+      "ticker": "FAM",
+      "thread_count": 6772,
+      "thread_share": 0.026186250285179558
+    },
+    {
+      "rank": 131,
+      "ticker": "SPOT",
+      "thread_count": 6772,
+      "thread_share": 0.026186250285179558
+    },
+    {
+      "rank": 132,
+      "ticker": "ACT",
+      "thread_count": 6718,
+      "thread_share": 0.025977440846992952
+    },
+    {
+      "rank": 133,
+      "ticker": "TEAM",
+      "thread_count": 6671,
+      "thread_share": 0.025795699298941644
+    },
+    {
+      "rank": 134,
+      "ticker": "MOD",
+      "thread_count": 6651,
+      "thread_share": 0.025718362469983644
+    },
+    {
+      "rank": 135,
+      "ticker": "BASE",
+      "thread_count": 6492,
+      "thread_share": 0.025103534679767524
+    },
+    {
+      "rank": 136,
+      "ticker": "TONS",
+      "thread_count": 6483,
+      "thread_share": 0.025068733106736425
+    },
+    {
+      "rank": 137,
+      "ticker": "VIA",
+      "thread_count": 6431,
+      "thread_share": 0.024867657351445617
+    },
+    {
+      "rank": 138,
+      "ticker": "DRUG",
+      "thread_count": 6372,
+      "thread_share": 0.024639513706019512
+    },
+    {
+      "rank": 139,
+      "ticker": "BOX",
+      "thread_count": 6364,
+      "thread_share": 0.024608578974436312
+    },
+    {
+      "rank": 140,
+      "ticker": "ATH",
+      "thread_count": 6165,
+      "thread_share": 0.023839077526304188
+    },
+    {
+      "rank": 141,
+      "ticker": "DIS",
+      "thread_count": 6136,
+      "thread_share": 0.023726939124315085
+    },
+    {
+      "rank": 142,
+      "ticker": "WINS",
+      "thread_count": 6129,
+      "thread_share": 0.023699871234179784
+    },
+    {
+      "rank": 143,
+      "ticker": "SITE",
+      "thread_count": 6125,
+      "thread_share": 0.023684403868388184
+    },
+    {
+      "rank": 144,
+      "ticker": "SHIP",
+      "thread_count": 6117,
+      "thread_share": 0.023653469136804984
+    },
+    {
+      "rank": 145,
+      "ticker": "SHOP",
+      "thread_count": 6113,
+      "thread_share": 0.023638001771013384
+    },
+    {
+      "rank": 146,
+      "ticker": "KEY",
+      "thread_count": 6050,
+      "thread_share": 0.023394390759795675
+    },
+    {
+      "rank": 147,
+      "ticker": "FIT",
+      "thread_count": 6044,
+      "thread_share": 0.023371189711108277
+    },
+    {
+      "rank": 148,
+      "ticker": "VIEW",
+      "thread_count": 6009,
+      "thread_share": 0.023235850260431772
+    },
+    {
+      "rank": 149,
+      "ticker": "MEET",
+      "thread_count": 5984,
+      "thread_share": 0.02313917922423427
+    },
+    {
+      "rank": 150,
+      "ticker": "QQQ",
+      "thread_count": 5931,
+      "thread_share": 0.022934236627495563
+    },
+    {
+      "rank": 151,
+      "ticker": "EYE",
+      "thread_count": 5900,
+      "thread_share": 0.022814364542610658
+    },
+    {
+      "rank": 152,
+      "ticker": "EXP",
+      "thread_count": 5872,
+      "thread_share": 0.022706092982069458
+    },
+    {
+      "rank": 153,
+      "ticker": "PRE",
+      "thread_count": 5848,
+      "thread_share": 0.022613288787319854
+    },
+    {
+      "rank": 154,
+      "ticker": "LAW",
+      "thread_count": 5820,
+      "thread_share": 0.02250501722677865
+    },
+    {
+      "rank": 155,
+      "ticker": "DOW",
+      "thread_count": 5801,
+      "thread_share": 0.02243154723926855
+    },
+    {
+      "rank": 156,
+      "ticker": "EOD",
+      "thread_count": 5767,
+      "thread_share": 0.022300074630039943
+    },
+    {
+      "rank": 157,
+      "ticker": "FIX",
+      "thread_count": 5748,
+      "thread_share": 0.022226604642529842
+    },
+    {
+      "rank": 158,
+      "ticker": "USA",
+      "thread_count": 5722,
+      "thread_share": 0.02212606676488444
+    },
+    {
+      "rank": 159,
+      "ticker": "TIP",
+      "thread_count": 5547,
+      "thread_share": 0.02144936951150192
+    },
+    {
+      "rank": 160,
+      "ticker": "PAYS",
+      "thread_count": 5540,
+      "thread_share": 0.02142230162136662
+    },
+    {
+      "rank": 161,
+      "ticker": "EYES",
+      "thread_count": 5524,
+      "thread_share": 0.02136043215820022
+    },
+    {
+      "rank": 162,
+      "ticker": "FLOW",
+      "thread_count": 5511,
+      "thread_share": 0.021310163219377516
+    },
+    {
+      "rank": 163,
+      "ticker": "NFLX",
+      "thread_count": 5409,
+      "thread_share": 0.020915745391691703
+    },
+    {
+      "rank": 164,
+      "ticker": "BEER",
+      "thread_count": 5402,
+      "thread_share": 0.020888677501556405
+    },
+    {
+      "rank": 165,
+      "ticker": "LAND",
+      "thread_count": 5374,
+      "thread_share": 0.0207804059410152
+    },
+    {
+      "rank": 166,
+      "ticker": "IRON",
+      "thread_count": 5304,
+      "thread_share": 0.020509727039662192
+    },
+    {
+      "rank": 167,
+      "ticker": "AIR",
+      "thread_count": 5295,
+      "thread_share": 0.020474925466631093
+    },
+    {
+      "rank": 168,
+      "ticker": "BID",
+      "thread_count": 5295,
+      "thread_share": 0.020474925466631093
+    },
+    {
+      "rank": 169,
+      "ticker": "BABA",
+      "thread_count": 5259,
+      "thread_share": 0.02033571917450669
+    },
+    {
+      "rank": 170,
+      "ticker": "PPL",
+      "thread_count": 5184,
+      "thread_share": 0.02004570606591418
+    },
+    {
+      "rank": 171,
+      "ticker": "GRAB",
+      "thread_count": 5103,
+      "thread_share": 0.01973249190863427
+    },
+    {
+      "rank": 172,
+      "ticker": "FIVE",
+      "thread_count": 5065,
+      "thread_share": 0.019585551933614068
+    },
+    {
+      "rank": 173,
+      "ticker": "CAT",
+      "thread_count": 4988,
+      "thread_share": 0.019287805142125757
+    },
+    {
+      "rank": 174,
+      "ticker": "LAZY",
+      "thread_count": 4927,
+      "thread_share": 0.01905192781380385
+    },
+    {
+      "rank": 175,
+      "ticker": "ROCK",
+      "thread_count": 4848,
+      "thread_share": 0.01874644733941974
+    },
+    {
+      "rank": 176,
+      "ticker": "LEG",
+      "thread_count": 4724,
+      "thread_share": 0.018266958999880126
+    },
+    {
+      "rank": 177,
+      "ticker": "BOI",
+      "thread_count": 4677,
+      "thread_share": 0.01808521745182882
+    },
+    {
+      "rank": 178,
+      "ticker": "PRO",
+      "thread_count": 4676,
+      "thread_share": 0.018081350610380922
+    },
+    {
+      "rank": 179,
+      "ticker": "CRY",
+      "thread_count": 4658,
+      "thread_share": 0.01801174746431872
+    },
+    {
+      "rank": 180,
+      "ticker": "JACK",
+      "thread_count": 4628,
+      "thread_share": 0.01789574222088172
+    },
+    {
+      "rank": 181,
+      "ticker": "AIN",
+      "thread_count": 4614,
+      "thread_share": 0.017841606440611116
+    },
+    {
+      "rank": 182,
+      "ticker": "BOOM",
+      "thread_count": 4611,
+      "thread_share": 0.017830005916267416
+    },
+    {
+      "rank": 183,
+      "ticker": "BODY",
+      "thread_count": 4592,
+      "thread_share": 0.017756535928757314
+    },
+    {
+      "rank": 184,
+      "ticker": "FOUR",
+      "thread_count": 4591,
+      "thread_share": 0.017752669087309412
+    },
+    {
+      "rank": 185,
+      "ticker": "MEN",
+      "thread_count": 4585,
+      "thread_share": 0.017729468038622014
+    },
+    {
+      "rank": 186,
+      "ticker": "ROAD",
+      "thread_count": 4557,
+      "thread_share": 0.01762119647808081
+    },
+    {
+      "rank": 187,
+      "ticker": "TEN",
+      "thread_count": 4531,
+      "thread_share": 0.017520658600435408
+    },
+    {
+      "rank": 188,
+      "ticker": "AUTO",
+      "thread_count": 4451,
+      "thread_share": 0.017211311284603396
+    },
+    {
+      "rank": 189,
+      "ticker": "SIX",
+      "thread_count": 4393,
+      "thread_share": 0.01698703448062519
+    },
+    {
+      "rank": 190,
+      "ticker": "ALOT",
+      "thread_count": 4361,
+      "thread_share": 0.016863295554292387
+    },
+    {
+      "rank": 191,
+      "ticker": "FORD",
+      "thread_count": 4352,
+      "thread_share": 0.016828493981261287
+    },
+    {
+      "rank": 192,
+      "ticker": "AVG",
+      "thread_count": 4285,
+      "thread_share": 0.01656941560425198
+    },
+    {
+      "rank": 193,
+      "ticker": "MIN",
+      "thread_count": 4276,
+      "thread_share": 0.016534614031220876
+    },
+    {
+      "rank": 194,
+      "ticker": "COKE",
+      "thread_count": 4273,
+      "thread_share": 0.01652301350687718
+    },
+    {
+      "rank": 195,
+      "ticker": "CLUB",
+      "thread_count": 4263,
+      "thread_share": 0.016484345092398177
+    },
+    {
+      "rank": 196,
+      "ticker": "UBER",
+      "thread_count": 4222,
+      "thread_share": 0.01632580459303427
+    },
+    {
+      "rank": 197,
+      "ticker": "DOOR",
+      "thread_count": 4212,
+      "thread_share": 0.016287136178555272
+    },
+    {
+      "rank": 198,
+      "ticker": "COLD",
+      "thread_count": 4185,
+      "thread_share": 0.016182731459461967
+    },
+    {
+      "rank": 199,
+      "ticker": "HOOD",
+      "thread_count": 4183,
+      "thread_share": 0.01617499777656617
+    },
+    {
+      "rank": 200,
+      "ticker": "TOWN",
+      "thread_count": 4168,
+      "thread_share": 0.016116995154847664
+    }
+  ]
+}
