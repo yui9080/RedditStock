@@ -1,0 +1,88 @@
+{
+  "source": "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_02_filtered_comment_ticker\\2026-10-13_05-51-49_UTC\\comment_ticker_cleaned.parquet",
+  "mention_rows": 1447576,
+  "unique_comments": 1257880,
+  "unique_threads": 127966,
+  "unique_authors": null,
+  "calendar_months": 101,
+  "month_min": "2012-04",
+  "month_max": "2020-08",
+  "comments_missing_month": 0,
+  "comments_missing_thread": 0,
+  "single_comment_threads": 51013,
+  "multi_comment_threads": 76953,
+  "single_comment_thread_ratio": 0.39864495256552523,
+  "distribution": [
+    {
+      "metric": "monthly_threads",
+      "count": 101,
+      "mean": 1296.5247524752476,
+      "median": 1203.0,
+      "min": 14,
+      "P25": 103.0,
+      "P75": 1803.0,
+      "P90": 3270.0,
+      "P95": 4088.0,
+      "P99": 5633.0,
+      "max": 6555
+    },
+    {
+      "metric": "monthly_comments",
+      "count": 101,
+      "mean": 12454.257425742575,
+      "median": 4308.0,
+      "min": 34,
+      "P25": 376.0,
+      "P75": 13354.0,
+      "P90": 28079.0,
+      "P95": 71440.0,
+      "P99": 115986.0,
+      "max": 132372
+    },
+    {
+      "metric": "comments_per_thread_all_period",
+      "count": 127966,
+      "mean": 9.82979854023725,
+      "median": 2.0,
+      "min": 1,
+      "P25": 1.0,
+      "P75": 4.0,
+      "P90": 9.0,
+      "P95": 14.0,
+      "P99": 66.0,
+      "max": 4588
+    },
+    {
+      "metric": "comments_per_thread_month",
+      "count": 130949,
+      "mean": 9.60587709719051,
+      "median": 2.0,
+      "min": 1,
+      "P25": 1.0,
+      "P75": 4.0,
+      "P90": 8.0,
+      "P95": 14.0,
+      "P99": 62.0,
+      "max": 4588
+    },
+    {
+      "metric": "active_months_per_thread",
+      "count": 127966,
+      "mean": 1.0233108794523544,
+      "median": 1.0,
+      "min": 1,
+      "P25": 1.0,
+      "P75": 1.0,
+      "P90": 1.0,
+      "P95": 1.0,
+      "P99": 2.0,
+      "max": 6
+    }
+  ],
+  "comment_key": [
+    "source_file",
+    "source_row"
+  ],
+  "monthly_population": "continuous observed UTC months, including zero activity",
+  "status": "complete"
+}

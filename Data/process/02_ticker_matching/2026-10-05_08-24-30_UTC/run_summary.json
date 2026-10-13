@@ -1,0 +1,284 @@
+{
+  "status": "complete",
+  "schema_version": 2,
+  "comment_enrichment": true,
+  "selected_method": "token_hash_set",
+  "chunk_size": 50000,
+  "benchmark_rows": 100000,
+  "dictionary": "C:\\Users\\eagle\\RedditStock\\Data\\process\\00_biild_ticker_list\\2026-10-05_08-12-26_UTC\\Ticker_name.txt",
+  "date_matching_policy": "dictionary_only_no_comment_date_filter",
+  "ticker_history_rows": 16508,
+  "dictionary_unique_tickers": 7314,
+  "permno_file": "C:\\Users\\eagle\\RedditStock\\Data\\process\\00_biild_ticker_list\\2026-10-05_08-12-26_UTC\\PERMNO_list.txt",
+  "permno_sha256": "c2d43dde02f9ab50829ee1b91ff095b100dd47a612cdbf8329c7699fab09d954",
+  "ticker_source_summary": {
+    "status": "complete",
+    "source": "C:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_name.csv",
+    "source_size_mtime": [
+      9448965,
+      1791186876682875500
+    ],
+    "research_start": "2012-01-01",
+    "research_end": "2022-12-31",
+    "endpoints_inclusive": true,
+    "permno_scope": "records after ticker length >2 and date overlap filters",
+    "ticker_history_deduplicated": false,
+    "ticker_file_delimiter": "tab",
+    "original_dates_preserved": true,
+    "diagnostics": [
+      {
+        "stage": "input",
+        "rows": 110365,
+        "start_min": "1925-12-31",
+        "end_max": "2025-12-31",
+        "unique_permnos": 26907,
+        "unique_tickers": 26216,
+        "unique_authors": "N/A",
+        "unique_threads": "N/A"
+      },
+      {
+        "stage": "ticker_length_gt_2",
+        "rows": 104005,
+        "start_min": "1945-12-31",
+        "end_max": "2025-12-31",
+        "unique_permnos": 25337,
+        "unique_tickers": 25694,
+        "unique_authors": "N/A",
+        "unique_threads": "N/A"
+      },
+      {
+        "stage": "overlaps_2012_2022",
+        "rows": 16508,
+        "start_min": "2008-06-27",
+        "end_max": "2023-09-28",
+        "unique_permnos": 6675,
+        "unique_tickers": 7314,
+        "unique_authors": "N/A",
+        "unique_threads": "N/A"
+      }
+    ],
+    "excluded_short_or_empty_ticker_rows": 6360,
+    "excluded_nonoverlapping_rows_after_length_filter": 87497,
+    "permno_file": "PERMNO_list.txt",
+    "ticker_file": "Ticker_name.txt"
+  },
+  "dictionary_sha256": "588df5c7030863e4cb4351623d32fbd9a6e01c8adecc8fee41c06cd6f056c7dd",
+  "input_metadata": {
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part1.csv": [
+      63729672,
+      1791188528015999300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part2.csv": [
+      97837152,
+      1791188531875418200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part3.csv": [
+      364124679,
+      1791188547876241300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part4.csv": [
+      544503865,
+      1791188571342483600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part5.csv": [
+      680250713,
+      1791188600420231300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-05_08-22-06_UTC\\wallstreetbets_comment_part6.csv": [
+      358353293,
+      1791188615842140800
+    ]
+  },
+  "versions": {
+    "pandas": "3.0.3",
+    "pyarrow": "23.0.1",
+    "pyahocorasick": "2.3.1"
+  },
+  "python": "3.14.6",
+  "case_policy": "uppercase text and dictionary",
+  "token_policy": "Unicode word tokens",
+  "created_utc_output_type": "original string",
+  "run_directory": "C:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-05_08-24-30_UTC",
+  "files": [
+    {
+      "file": "wallstreetbets_comment_part1.csv",
+      "raw_row_count": 310753,
+      "matched_comment_count": 212136,
+      "comments_with_ge2_tickers": 130286,
+      "mention_row_count": 563841,
+      "raw_missing_comment_id_count": 23,
+      "matched_missing_comment_id_count": 12,
+      "raw_date_min": "1970-01-01T00:00:01+00:00",
+      "raw_date_max": "2016-04-25T12:28:09+00:00",
+      "raw_invalid_date_count": 23,
+      "matched_date_min": "2012-04-11T16:46:43+00:00",
+      "matched_date_max": "2016-04-25T12:28:09+00:00",
+      "matched_invalid_date_count": 12,
+      "match_rate": 0.682651494917185,
+      "unique_raw_authors": 16596,
+      "unique_raw_threads": 20315,
+      "unique_matched_authors": 14215,
+      "unique_matched_threads": 19271,
+      "unique_matched_tickers": 2523,
+      "processing_seconds": 8.584058600012213
+    },
+    {
+      "file": "wallstreetbets_comment_part2.csv",
+      "raw_row_count": 575124,
+      "matched_comment_count": 353085,
+      "comments_with_ge2_tickers": 200509,
+      "mention_row_count": 833774,
+      "raw_missing_comment_id_count": 0,
+      "matched_missing_comment_id_count": 0,
+      "raw_date_min": "2016-04-25T12:29:23+00:00",
+      "raw_date_max": "2017-04-01T06:13:54+00:00",
+      "raw_invalid_date_count": 0,
+      "matched_date_min": "2016-04-25T12:29:23+00:00",
+      "matched_date_max": "2017-04-01T06:13:54+00:00",
+      "matched_invalid_date_count": 0,
+      "match_rate": 0.6139284745550525,
+      "unique_raw_authors": 31225,
+      "unique_raw_threads": 33094,
+      "unique_matched_authors": 24866,
+      "unique_matched_threads": 30930,
+      "unique_matched_tickers": 2533,
+      "processing_seconds": 14.131626599933952
+    },
+    {
+      "file": "wallstreetbets_comment_part3.csv",
+      "raw_row_count": 2218513,
+      "matched_comment_count": 1356587,
+      "comments_with_ge2_tickers": 742752,
+      "mention_row_count": 3019446,
+      "raw_missing_comment_id_count": 0,
+      "matched_missing_comment_id_count": 0,
+      "raw_date_min": "2017-04-01T05:41:35+00:00",
+      "raw_date_max": "2018-12-31T00:05:11+00:00",
+      "raw_invalid_date_count": 0,
+      "matched_date_min": "2017-04-01T05:47:17+00:00",
+      "matched_date_max": "2018-12-31T00:05:03+00:00",
+      "matched_invalid_date_count": 0,
+      "match_rate": 0.6114848098703952,
+      "unique_raw_authors": 95173,
+      "unique_raw_threads": 98161,
+      "unique_matched_authors": 75558,
+      "unique_matched_threads": 91581,
+      "unique_matched_tickers": 3232,
+      "processing_seconds": 55.65639779996127
+    },
+    {
+      "file": "wallstreetbets_comment_part4.csv",
+      "raw_row_count": 3528708,
+      "matched_comment_count": 2142822,
+      "comments_with_ge2_tickers": 1129757,
+      "mention_row_count": 4556535,
+      "raw_missing_comment_id_count": 0,
+      "matched_missing_comment_id_count": 0,
+      "raw_date_min": "2018-12-31T00:00:33+00:00",
+      "raw_date_max": "2020-02-01T00:00:15+00:00",
+      "raw_invalid_date_count": 0,
+      "matched_date_min": "2018-12-31T00:00:33+00:00",
+      "matched_date_max": "2020-02-01T00:00:15+00:00",
+      "matched_invalid_date_count": 0,
+      "match_rate": 0.6072539864448971,
+      "unique_raw_authors": 179220,
+      "unique_raw_threads": 48761,
+      "unique_matched_authors": 113296,
+      "unique_matched_threads": 45332,
+      "unique_matched_tickers": 3433,
+      "processing_seconds": 89.23090099985711
+    },
+    {
+      "file": "wallstreetbets_comment_part5.csv",
+      "raw_row_count": 4458806,
+      "matched_comment_count": 2586969,
+      "comments_with_ge2_tickers": 1327312,
+      "mention_row_count": 5333505,
+      "raw_missing_comment_id_count": 0,
+      "matched_missing_comment_id_count": 0,
+      "raw_date_min": "2020-02-01T00:00:02+00:00",
+      "raw_date_max": "2020-06-01T00:00:09+00:00",
+      "raw_invalid_date_count": 0,
+      "matched_date_min": "2020-02-01T00:00:02+00:00",
+      "matched_date_max": "2020-06-01T00:00:07+00:00",
+      "matched_invalid_date_count": 0,
+      "match_rate": 0.580193217646159,
+      "unique_raw_authors": 159578,
+      "unique_raw_threads": 53068,
+      "unique_matched_authors": 124784,
+      "unique_matched_threads": 49456,
+      "unique_matched_tickers": 3261,
+      "processing_seconds": 110.7812618999742
+    },
+    {
+      "file": "wallstreetbets_comment_part6.csv",
+      "raw_row_count": 2385062,
+      "matched_comment_count": 1451373,
+      "comments_with_ge2_tickers": 748200,
+      "mention_row_count": 3009289,
+      "raw_missing_comment_id_count": 0,
+      "matched_missing_comment_id_count": 0,
+      "raw_date_min": "2020-06-01T00:00:01+00:00",
+      "raw_date_max": "2020-08-06T01:41:22+00:00",
+      "raw_invalid_date_count": 0,
+      "matched_date_min": "2020-06-01T00:00:04+00:00",
+      "matched_date_max": "2020-08-06T01:41:18+00:00",
+      "matched_invalid_date_count": 0,
+      "match_rate": 0.6085263192319529,
+      "unique_raw_authors": 97712,
+      "unique_raw_threads": 23872,
+      "unique_matched_authors": 76979,
+      "unique_matched_threads": 22720,
+      "unique_matched_tickers": 3149,
+      "processing_seconds": 57.09255829988979
+    }
+  ],
+  "overall": {
+    "file": "ALL_FILES",
+    "processing_seconds": 335.5461851998698,
+    "raw_row_count": 13476966,
+    "matched_comment_count": 8102972,
+    "comments_with_ge2_tickers": 4278816,
+    "mention_row_count": 17316390,
+    "raw_invalid_date_count": 23,
+    "matched_invalid_date_count": 12,
+    "raw_missing_comment_id_count": 23,
+    "matched_missing_comment_id_count": 12,
+    "match_rate": 0.6012460074470768,
+    "raw_date_min": "1970-01-01T00:00:01+00:00",
+    "raw_date_max": "2020-08-06T01:41:22+00:00",
+    "unique_raw_authors": 409612,
+    "unique_raw_threads": 273994,
+    "matched_date_min": "2012-04-11T16:46:43+00:00",
+    "matched_date_max": "2020-08-06T01:41:18+00:00",
+    "unique_matched_authors": 300966,
+    "unique_matched_threads": 256963,
+    "unique_matched_tickers": 4982
+  },
+  "benchmark": [
+    {
+      "method": "token_hash_set",
+      "rows": 100000,
+      "build_seconds": 2.00001522898674e-06,
+      "repeat_seconds": [
+        0.9228605998214334,
+        0.8610529000870883,
+        1.0200255999807268
+      ],
+      "median_seconds": 0.9228605998214334,
+      "rows_per_second": 108358.7272220195
+    },
+    {
+      "method": "aho_corasick",
+      "rows": 100000,
+      "build_seconds": 0.004122100071981549,
+      "repeat_seconds": [
+        1.5562768999952823,
+        1.3186057999264449,
+        1.4830323001369834
+      ],
+      "median_seconds": 1.4830323001369834,
+      "rows_per_second": 67429.4147138692
+    }
+  ]
+}

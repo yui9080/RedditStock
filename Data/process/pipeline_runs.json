@@ -1,0 +1,5 @@
+{
+  "cleaned_manifest": "c:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-13_04-49-40_UTC\\run_summary.json",
+  "matching_manifest": "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\run_summary.json",
+  "thread_manifest": null
+}

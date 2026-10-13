@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source": "C:\\Users\\eagle\\RedditStock\\Data\\process\\02_02_filtered_comment_ticker\\2026-10-13_05-51-49_UTC\\comment_ticker_cleaned.parquet",
+  "mention_rows": 1447576,
+  "unique_comments": 1257880,
+  "unique_threads": 127966,
+  "unique_authors": 114308,
+  "comments_missing_thread": 0,
+  "comments_unknown_author": 3209,
+  "comment_key": [
+    "source_file",
+    "source_row"
+  ],
+  "permno_count": "distinct PERMNOs, not ticker mentions",
+  "author_policy": "Exclude empty/[deleted]/[removed] identities only from author counts; retain their comments.",
+  "population": "all cleaned retained mentions across the full period; no additional date filter",
+  "std_ddof": 1,
+  "p90_method": "linear",
+  "author_sources": [
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part1.comments.parquet",
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part2.comments.parquet",
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part3.comments.parquet",
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part4.comments.parquet",
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part5.comments.parquet",
+    "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-13_05-01-55_UTC\\wallstreetbets_comment_part6.comments.parquet"
+  ],
+  "distribution": [
+    {
+      "metric": "authors_per_thread",
+      "N": 127966,
+      "Mean": 6.788795461294407,
+      "Median": 2.0,
+      "std": 50.656256149365746,
+      "p90": 7.0,
+      "max": 2059
+    },
+    {
+      "metric": "comments_per_thread",
+      "N": 127966,
+      "Mean": 9.82979854023725,
+      "Median": 2.0,
+      "std": 93.69323680751438,
+      "p90": 9.0,
+      "max": 4588
+    },
+    {
+      "metric": "permnos_per_thread",
+      "N": 127966,
+      "Mean": 4.040870231155151,
+      "Median": 2.0,
+      "std": 14.049825166907043,
+      "p90": 6.0,
+      "max": 456
+    },
+    {
+      "metric": "permnos_per_author",
+      "N": 114308,
+      "Mean": 5.4704220177065475,
+      "Median": 2.0,
+      "std": 11.292973635247584,
+      "p90": 13.0,
+      "max": 581
+    },
+    {
+      "metric": "permnos_per_comment",
+      "N": 1257880,
+      "Mean": 1.150806118230674,
+      "Median": 1.0,
+      "std": 0.6612422601039635,
+      "p90": 2.0,
+      "max": 289
+    }
+  ],
+  "runtime_seconds": 9.426008000038564
+}

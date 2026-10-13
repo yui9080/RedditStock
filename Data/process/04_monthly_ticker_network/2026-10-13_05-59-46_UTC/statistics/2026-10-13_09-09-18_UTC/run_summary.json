@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "network_run": "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-13_05-59-46_UTC",
+  "crsp_source": "C:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_crsp.csv",
+  "months": 96,
+  "invalid_crsp_key_rows": 0,
+  "stock_population": "distinct PERMNO with at least one valid CRSP observation that calendar month",
+  "covered_stocks": "CRSP population intersect network nodes with degree > 0; excludes isolates",
+  "focal_firm_population": "all network node-months, including isolates; not restricted to CRSP intersection",
+  "pair_population": "all undirected edge-months; raw n_common_threads",
+  "std_ddof": 1,
+  "quantile_method": "linear; exact frequency histogram",
+  "distribution": [
+    {
+      "metric": "N_stocks_per_month",
+      "N": 96,
+      "mean": 3622.1770833333335,
+      "std": 64.460513379027,
+      "median": 3609.5,
+      "p90": 3726.5,
+      "min": 3531.0,
+      "max": 3754.0
+    },
+    {
+      "metric": "stocks_with_redditlinkage_per_month",
+      "N": 96,
+      "mean": 1034.6666666666667,
+      "std": 602.1414882980781,
+      "median": 1240.0,
+      "p90": 1670.0,
+      "min": 122.0,
+      "max": 2327.0
+    },
+    {
+      "metric": "coverage_pct_per_month",
+      "N": 96,
+      "mean": 28.774094323285976,
+      "std": 17.01137404268855,
+      "median": 34.5582806067444,
+      "p90": 46.86489251654052,
+      "min": 3.3710969881182646,
+      "max": 65.31013191131069
+    },
+    {
+      "metric": "redditlinkages_per_focal_firm",
+      "N": 104405,
+      "mean": 197.11101958718453,
+      "std": 325.7081591726696,
+      "median": 59.0,
+      "p90": 575.0,
+      "min": 0.0,
+      "max": 2275.0
+    },
+    {
+      "metric": "common_threads_per_stockpair",
+      "N": 10289688,
+      "mean": 5.906703099258209,
+      "std": 17.753336337608385,
+      "median": 1.0,
+      "p90": 11.0,
+      "min": 1.0,
+      "max": 1509.0
+    }
+  ],
+  "runtime_seconds": 37.35209270007908
+}
