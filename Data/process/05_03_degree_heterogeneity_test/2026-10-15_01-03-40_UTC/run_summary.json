@@ -1,0 +1,127 @@
+{
+  "status": "complete",
+  "panel": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_regression_panel\\2026-10-13_06-18-08_UTC\\04_regression_panel.parquet",
+  "panel_sha256": "1e097feb7570aecf1b8159fa7260991801928d1b086dfdb283dc015c40b1f8fc",
+  "network_run": "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-13_05-59-46_UTC",
+  "periods": {
+    "full_sample": [
+      "2012-10-01",
+      "2020-09-30"
+    ],
+    "late_sample": [
+      "2019-01-01",
+      "2020-09-30"
+    ]
+  },
+  "pooled_fits": [
+    {
+      "sample": "full_sample",
+      "model": "Model 1",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE",
+      "controls": [],
+      "n_obs": 2072003,
+      "n_firms": 3594,
+      "n_dates": 2013,
+      "min_date": "2012-10-01",
+      "max_date": "2020-09-30",
+      "period_candidate_rows": 2079062,
+      "dropped_complete_case": 7059,
+      "r_squared": 0.1043466752595884,
+      "adj_r_squared": 0.10347221536391771
+    },
+    {
+      "sample": "full_sample",
+      "model": "Model 2",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE",
+      "controls": [
+        "ret_d_pct",
+        "ret_20_2_pct",
+        "ret_120_21_pct"
+      ],
+      "n_obs": 2030273,
+      "n_firms": 3549,
+      "n_dates": 2013,
+      "min_date": "2012-10-01",
+      "max_date": "2020-09-30",
+      "period_candidate_rows": 2079062,
+      "dropped_complete_case": 48789,
+      "r_squared": 0.10647133246773399,
+      "adj_r_squared": 0.1055796752231144
+    },
+    {
+      "sample": "late_sample",
+      "model": "Model 1",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE",
+      "controls": [],
+      "n_obs": 789081,
+      "n_firms": 2860,
+      "n_dates": 441,
+      "min_date": "2019-01-02",
+      "max_date": "2020-09-30",
+      "period_candidate_rows": 790507,
+      "dropped_complete_case": 1426,
+      "r_squared": 0.1355778203278757,
+      "adj_r_squared": 0.13508566929821442
+    },
+    {
+      "sample": "late_sample",
+      "model": "Model 2",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE",
+      "controls": [
+        "ret_d_pct",
+        "ret_20_2_pct",
+        "ret_120_21_pct"
+      ],
+      "n_obs": 774085,
+      "n_firms": 2815,
+      "n_dates": 441,
+      "min_date": "2019-01-02",
+      "max_date": "2020-09-30",
+      "period_candidate_rows": 790507,
+      "dropped_complete_case": 16422,
+      "r_squared": 0.13760730629866436,
+      "adj_r_squared": 0.13710344723188206
+    }
+  ],
+  "source_counts": {
+    "panel_rows": 8183025,
+    "excluded_without_positive_degree_network": 6103963,
+    "positive_degree_candidate_rows": 2079062
+  },
+  "warnings": [
+    {
+      "message": "ret_t1: missing/nonfinite; model-specific complete cases.",
+      "count": 3192
+    },
+    {
+      "message": "reddit_ret: missing/nonfinite; model-specific complete cases.",
+      "count": 3867
+    },
+    {
+      "message": "ret_d: missing/nonfinite; model-specific complete cases.",
+      "count": 2623
+    },
+    {
+      "message": "ret_20_2: missing/nonfinite; model-specific complete cases.",
+      "count": 5372
+    },
+    {
+      "message": "ret_120_21: missing/nonfinite; model-specific complete cases.",
+      "count": 43137
+    },
+    {
+      "message": "illiquidity: missing/nonfinite; model-specific complete cases.",
+      "count": 3654
+    }
+  ],
+  "grouping": "05_02 monthly positive-degree nodes; ascending degree then PERMNO, deterministic tie splitting",
+  "scaling": "returns multiplied by 100; standardized_effect uses SD on model/group complete cases, ddof=1",
+  "covariance": "PERMNO CR1 including absorbed day FE degrees of freedom",
+  "inference": "implied slopes and Q5-Q1 t(G-1); joint Wald/4 uses F(4,G-1)",
+  "formal_tests": [
+    "joint_heterogeneity",
+    "Q5_vs_Q1"
+  ],
+  "runtime_seconds": 34.8414958000003,
+  "output_directory": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_03_degree_heterogeneity_test\\2026-10-15_01-03-40_UTC"
+}

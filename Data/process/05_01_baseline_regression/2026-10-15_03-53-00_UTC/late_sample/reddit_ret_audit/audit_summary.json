@@ -1,0 +1,21 @@
+{
+  "panel": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_regression_panel\\2026-10-15_03-48-20_UTC\\04_regression_panel.parquet",
+  "network": "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC",
+  "panel_hash_matches_result": true,
+  "candidate_observations": 1486481,
+  "reddit_ret_missing": 772609,
+  "missing_reasons": {
+    "no_network_month": 0,
+    "not_network_node": 759277,
+    "isolated_node": 13119,
+    "no_valid_peer_return": 213
+  },
+  "missing_among_positive_degree": 213,
+  "positive_degree_observations": 714085,
+  "direct_edge_reference_checked_rows": 141599,
+  "max_absolute_error": 4.996003610813204e-16,
+  "months_checked": 20,
+  "model1_complete_cases": 712700,
+  "ret_t1_missing_overlapping_reddit_missing": 16283,
+  "ret_t1_missing_with_reddit_present": 1172
+}

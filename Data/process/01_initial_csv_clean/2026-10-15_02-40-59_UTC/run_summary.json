@@ -1,0 +1,127 @@
+{
+  "schema_version": 2,
+  "files": [
+    {
+      "file": "wallstreetbets_comment_part1.csv",
+      "input_records": 310753,
+      "rows": 299810,
+      "rejected_records": 0,
+      "dropped_records": 10943,
+      "drop_reason_counts": {
+        "excluded_utc_month_2012-04": 217,
+        "deleted_author": 10385,
+        "missing_body": 336,
+        "missing_created_utc": 22,
+        "missing_id": 23,
+        "missing_link_id": 26,
+        "missing_author": 6,
+        "invalid_created_utc": 1
+      },
+      "output_bytes": 62042383,
+      "seconds": 2.9
+    },
+    {
+      "file": "wallstreetbets_comment_part2.csv",
+      "input_records": 575148,
+      "rows": 537839,
+      "rejected_records": 24,
+      "dropped_records": 37285,
+      "drop_reason_counts": {
+        "deleted_author": 36593,
+        "missing_body": 731
+      },
+      "output_bytes": 94936845,
+      "seconds": 6.6
+    },
+    {
+      "file": "wallstreetbets_comment_part3.csv",
+      "input_records": 2218513,
+      "rows": 2097094,
+      "rejected_records": 0,
+      "dropped_records": 121419,
+      "drop_reason_counts": {
+        "deleted_author": 119717,
+        "missing_body": 1723
+      },
+      "output_bytes": 353797223,
+      "seconds": 22.9
+    },
+    {
+      "file": "wallstreetbets_comment_part4.csv",
+      "input_records": 3528714,
+      "rows": 3470434,
+      "rejected_records": 6,
+      "dropped_records": 58274,
+      "drop_reason_counts": {
+        "deleted_author": 54868,
+        "missing_body": 3406
+      },
+      "output_bytes": 540772868,
+      "seconds": 31.2
+    },
+    {
+      "file": "wallstreetbets_comment_part5.csv",
+      "input_records": 4458806,
+      "rows": 4285821,
+      "rejected_records": 0,
+      "dropped_records": 172985,
+      "drop_reason_counts": {
+        "deleted_author": 169716,
+        "missing_body": 3269
+      },
+      "output_bytes": 668548705,
+      "seconds": 38.7
+    },
+    {
+      "file": "wallstreetbets_comment_part6.csv",
+      "input_records": 2385062,
+      "rows": 2191177,
+      "rejected_records": 0,
+      "dropped_records": 193885,
+      "drop_reason_counts": {
+        "deleted_author": 35005,
+        "missing_body": 1781,
+        "excluded_utc_month_2020-08": 159453
+      },
+      "output_bytes": 331424719,
+      "seconds": 21.4
+    }
+  ],
+  "total_rows": 12882175,
+  "total_input_records": 13476996,
+  "total_dropped_records": 594791,
+  "total_rejected_records": 30,
+  "drop_reason_counts": {
+    "excluded_utc_month_2012-04": 217,
+    "deleted_author": 426284,
+    "missing_body": 11246,
+    "missing_created_utc": 22,
+    "missing_id": 23,
+    "missing_link_id": 26,
+    "missing_author": 6,
+    "invalid_created_utc": 1,
+    "excluded_utc_month_2020-08": 159453
+  },
+  "required_columns": [
+    "author",
+    "body",
+    "created_utc",
+    "id",
+    "link_id"
+  ],
+  "missing_policy": "Drop empty/whitespace required fields; optional missing values retained.",
+  "author_policy": "Require nonblank author; drop exact deleted/removed/delete/remove markers, bracketed or plain, case-insensitive after trimming.",
+  "timestamp_policy": "Finite convertible Unix timestamp; exclude specified UTC months only.",
+  "excluded_utc_months": [
+    "2012-04",
+    "2020-08"
+  ],
+  "month_exclusion_policy": "Exclude entire specified UTC calendar months during raw CSV cleaning.",
+  "excluded_month_counts": {
+    "2012-04": 217,
+    "2020-08": 159453
+  },
+  "input_directory": "c:\\Users\\eagle\\RedditStock\\Data\\raw",
+  "status": "complete",
+  "run_directory": "c:\\Users\\eagle\\RedditStock\\Data\\process\\01_initial_csv_clean\\2026-10-15_02-40-59_UTC"
+}

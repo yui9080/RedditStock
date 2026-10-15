@@ -1,4 +1,0 @@
-Model 3 actual slope: 0.014398302. Reported percent-of-movement slope: 1.4398302.
-A 1 percentage-point increase in Reddit peer return on day d is associated with a 0.014398302 percentage-point change in the focal return on its next trading observation.
-carryover_ratio = beta_report / 100 = 0.014398302, equivalent to 1.4398302% of the peer-return movement.
-Scaling: both dependent and return explanatory variables are in percentage points. Actual slope b implies b percentage points of next-day focal return per 1 percentage point of peer return. For a percent-of-movement report, beta_report=100*b and carryover_ratio=beta_report/100=b. Dividing the actual percent/percent slope by 100 again is incorrect. This is association, not causation.

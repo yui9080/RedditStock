@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import warnings
 from unittest.mock import patch
 
 import numpy as np
@@ -15,6 +16,56 @@ spec.loader.exec_module(panel)
 
 
 class PanelTests(unittest.TestCase):
+    def test_sic_explicit_units_match_interval_reference(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'sic.csv'
+            history=pd.DataFrame([
+                (1,1234,'2020-01-01','2020-01-10'),
+                (1,1234,'2020-01-05','2020-01-15'),
+                (1,5678,'2020-01-10','2020-01-12'),
+                (2,2000,'2020-01-02','2020-01-03')],
+                columns=['permno','siccd','secinfostartdt','secinfoenddt'])
+            history.to_csv(path,index=False)
+            daily=pd.DataFrame([(p,d) for p in [1,2,3] for d in pd.date_range('2019-12-31','2020-01-16')],columns=['permno','date'])
+            daily['date']=daily.date.astype('datetime64[us]')
+            daily['siccd']=np.nan
+            original=daily[['permno','date']].copy()
+            expected_codes=[];expected_dates=[]
+            for row in daily.itertuples():
+                active=history.loc[history.permno.eq(row.permno)
+                    & pd.to_datetime(history.secinfostartdt).le(row.date)
+                    & pd.to_datetime(history.secinfoenddt).ge(row.date)]
+                codes=active.siccd.unique()
+                expected_codes.append(float(codes[0]) if len(codes)==1 else np.nan)
+                expected_dates.append(pd.to_datetime(active.secinfostartdt).max() if len(codes)==1 else pd.NaT)
+            with warnings.catch_warnings():
+                warnings.simplefilter('error',DeprecationWarning)
+                panel.add_sic(daily,path,False,[])
+            pd.testing.assert_frame_equal(daily[['permno','date']],original)
+            np.testing.assert_allclose(daily.siccd,expected_codes,equal_nan=True)
+            pd.testing.assert_series_equal(daily.sic_source_date,
+                pd.Series(expected_dates,dtype='datetime64[ns]',name='sic_source_date'))
+
+    def test_crsp_identity_uses_permno_not_ticker(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'crsp.csv'
+            pd.DataFrame({'permno':[1,1,2], 'Ticker':['OLD','NEW','NEW'],
+                          'DlyCalDt':['2020-01-02','2020-01-03','2020-01-03'],
+                          'DlyRet':[.1,.2,.3], 'DlyPrc':10, 'DlyVol':100, 'DlyCap':1000}).to_csv(path,index=False)
+            daily,_=panel.load_crsp(path,'thousand_usd',[])
+            panel.add_stock_controls(daily)
+            first=daily.loc[daily.permno.eq(1)].iloc[0]
+            self.assertAlmostEqual(first.ret_t1,.2)
+            self.assertTrue(pd.isna(daily.loc[daily.permno.eq(2),'ret_t1'].iloc[0]))
+            self.assertNotIn('Ticker',daily.columns)
+
+    def test_legacy_ticker_network_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder,timing=self.network(Path(tmp))
+            pd.DataFrame({'ticker_i':['ABC'],'ticker_j':['DEF'],'n_common_threads':[1]}).to_parquet(folder/'edges.parquet',index=False)
+            with self.assertRaisesRegex(ValueError,'native PERMNO pairs'):
+                panel.validate_network(folder,timing)
+
     def test_compounding_exact_windows_missing_and_total_loss(self):
         r = pd.Series(np.full(130,.01))
         a = panel.compounded_window(r,2,19)
@@ -127,7 +178,8 @@ class PanelTests(unittest.TestCase):
             rows=[{'permno':p,'DlyCalDt':str(d.date()),'DlyRet':.01*p,'DlyPrc':10.,'DlyVol':100.,
                    'DlyCap':1000.*p,'siccd':1234} for p in [1,2,3,4] for d in dates]
             crsp=root/'crsp.csv';pd.DataFrame(rows).to_csv(crsp,index=False)
-            args=['panel05','--network-run',str(net),'--crsp',str(crsp),'--output-dir',str(root/'output')]
+            args=['panel05','--network-run',str(net),'--crsp',str(crsp),'--output-dir',str(root/'output'),
+                  '--start','2020-09-01','--end','2020-10-09']
             with patch('sys.argv',args):panel.main()
             f=pd.read_parquet(root/'output/04_regression_panel.parquet')
             self.assertEqual(len(f),len(rows));self.assertFalse(f.duplicated(['permno','date']).any())
@@ -137,11 +189,43 @@ class PanelTests(unittest.TestCase):
             summary=json.loads((root/'output/run_summary.json').read_text())
             self.assertFalse(summary['regression_executed'])
             self.assertEqual(summary['diagnostics']['observations_with_all_baseline_variables'],0)
+            # Slicing output must not erase pre-start history or post-end lead returns.
+            sliced_args=['panel05','--network-run',str(net),'--crsp',str(crsp),
+                         '--output-dir',str(root/'sliced'),'--start','2020-09-29','--end','2020-10-02']
+            with patch('sys.argv',sliced_args):panel.main()
+            sliced=pd.read_parquet(root/'sliced/04_regression_panel.parquet')
+            self.assertTrue(sliced.date.between('2020-09-29','2020-10-02').all())
+            first=sliced.loc[sliced.date.eq('2020-09-29') & sliced.permno.eq(1)].iloc[0]
+            self.assertAlmostEqual(first.ret_20_2,1.01**19-1)
+            last=sliced.loc[sliced.date.eq('2020-10-02') & sliced.permno.eq(1)].iloc[0]
+            self.assertEqual(last.ret_t1_date,pd.Timestamp('2020-10-05'))
+            self.assertAlmostEqual(last.ret_t1,.01)
             # The timing checker must reject an injected future RHS cutoff.
             subset=f.loc[f.network_month.eq('2020-10')].copy()
             eligible=subset.illiquidity.notna()
             subset.loc[eligible,'illiquidity_max_date']=subset.loc[eligible,'date']
             with self.assertRaises(ValueError):panel.lookahead_checks(subset)
+            # Ctrl+C during writing or diagnostics cannot publish a complete panel.
+            for target in ['reddit_returns','write_diagnostics']:
+                interrupted=root/('interrupted_'+target)
+                interrupt_args=args.copy()
+                interrupt_args[interrupt_args.index('--output-dir')+1]=str(interrupted)
+                with patch('sys.argv',interrupt_args),patch.object(panel,target,side_effect=KeyboardInterrupt):
+                    with self.assertRaises(KeyboardInterrupt):panel.main()
+                self.assertFalse((interrupted/'04_regression_panel.parquet').exists())
+                self.assertFalse((interrupted/'run_summary.json').exists())
+            # Also exercise interruption between panel and manifest publication.
+            interrupted=root/'interrupted_publish'
+            interrupt_args=args.copy()
+            interrupt_args[interrupt_args.index('--output-dir')+1]=str(interrupted)
+            replace=Path.replace
+            def interrupt_manifest(path,target):
+                if path.name=='run_summary.json.partial':raise KeyboardInterrupt
+                return replace(path,target)
+            with patch('sys.argv',interrupt_args),patch.object(Path,'replace',interrupt_manifest):
+                with self.assertRaises(KeyboardInterrupt):panel.main()
+            self.assertFalse((interrupted/'04_regression_panel.parquet').exists())
+            self.assertFalse((interrupted/'run_summary.json').exists())
 
 
 if __name__=='__main__':unittest.main()

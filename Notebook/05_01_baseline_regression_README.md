@@ -4,16 +4,17 @@ Both baseline period samples use one entry point:
 
 ```powershell
 python Notebook/05_01_baseline_regression.py
-python Notebook/05_01_baseline_regression.py --sample baseline
-python Notebook/05_01_baseline_regression.py --sample 2019_2020
+python Notebook/05_01_baseline_regression.py --sample full_sample
+python Notebook/05_01_baseline_regression.py --sample late_sample
 ```
 
-The default runs both samples. `baseline` uses 2014-06-01 through 2020-06-30;
-`2019_2020` uses available 2019/2020 network months within 2019-01-01 through
-2020-12-31 (currently through 2020-09). Both use the same regression code.
+The default runs both samples. `full_sample` uses 2012-11-01 through 2020-08-31;
+`late_sample` uses 2019-01-01 through 2020-08-31. The definitions are shared by
+05, 05_01, 05_02 and 05_03 in `regression_samples.py`. Old CLI aliases `baseline`
+and `2019_2020` remain accepted and map to these new periods.
 The old 05_02 baseline wrapper has been removed. All baseline outputs now use
 the 05_01 prefix and share Data/process/05_01_baseline_regression/<UTC time>/,
-with baseline/ and 2019_2020/ subdirectories. Existing historical outputs remain.
+with full_sample/ and late_sample/ subdirectories. Existing historical outputs remain.
 05_02_degree_group_regression.py is now the degree-group regression entry point
 and saves to Data/process/05_02_degree_group_regression/<UTC time>/.
 

@@ -17,6 +17,7 @@ import pyarrow.parquet as pq
 
 BASE = runpy.run_path(str(Path(__file__).with_name('05_01_baseline_regression.py')))
 ROOT = BASE['ROOT']
+PERIODS = BASE['PERIODS']
 
 
 def degree_groups(nodes, month):
@@ -114,8 +115,8 @@ def main():
     frame,source_counts=load_grouped_panel(panel,assignments,log)
     print('Grouped candidates:',BASE['sample_details'](frame),'\nOutput:',out,flush=True)
     all_infos=[];all_rows=[];periods={}
-    for period in ['full_sample','2019_2020']:
-        sample=frame if period=='full_sample' else frame.loc[frame.network_month.str[:4].isin(['2019','2020'])]
+    for period,(start,end) in PERIODS.items():
+        sample=frame.loc[frame.date.between(pd.Timestamp(start),pd.Timestamp(end))]
         period_out=out/period;period_out.mkdir()
         periods[period]=BASE['sample_details'](sample)
         infos=[];rows=[]
@@ -146,7 +147,7 @@ def main():
     for file,stat in input_stats.items():
         if stat!=(Path(file).stat().st_size,Path(file).stat().st_mtime_ns):raise ValueError('Input changed during run')
     report={'status':'complete','panel':str(panel),'panel_sha256':BASE['hash_file'](panel),'network_run':str(network),
-            'periods':periods,'source_counts':source_counts,'models':all_infos,'warnings':log,
+            'sample_periods':PERIODS,'periods':periods,'source_counts':source_counts,'models':all_infos,'warnings':log,
             'grouping':'monthly positive-degree native network nodes; ascending degree then PERMNO; floor(rank0*5/n)+1',
             'group_population':'all positive-degree network nodes, before daily returns or complete-case selection',
             'grouping_uses_future_information':False,'model_implementation':'05_01_baseline_regression.estimate',

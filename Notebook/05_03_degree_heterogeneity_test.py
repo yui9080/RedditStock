@@ -14,8 +14,7 @@ from scipy import stats
 GROUP = runpy.run_path(str(Path(__file__).with_name('05_02_degree_group_regression.py')))
 BASE = GROUP['BASE']
 ROOT = BASE['ROOT']
-PERIODS = {'full_sample':('2014-06-01','2020-06-30'),
-           'late_sample':('2019-01-01','2020-06-30')}
+PERIODS = BASE['PERIODS']
 
 
 def linear_slope(params,covariance,contrast,df):

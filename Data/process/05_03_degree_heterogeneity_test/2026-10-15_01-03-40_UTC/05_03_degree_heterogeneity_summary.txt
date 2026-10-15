@@ -1,0 +1,32 @@
+Subgroup estimates have separate day FE and control slopes; pooled interaction estimates share day FE and control slopes, and need not numerically match subgroup slopes.
+All returns are in percentage points. Standardized effect is beta times sample SD of reddit_ret_pct; no regression variables are standardized.
+Descriptive standardized-effect comparison uses Q1/Q5 endpoint directions only, not an additional significance test.
+Only joint heterogeneity and Q5-vs-Q1 are formally tested. Different subgroup significance alone does not establish different slopes. No causal inference.
+
+full_sample / Model 1: {"sample": "full_sample", "model": "Model 1", "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE", "controls": [], "n_obs": 2072003, "n_firms": 3594, "n_dates": 2013, "min_date": "2012-10-01", "max_date": "2020-09-30", "period_candidate_rows": 2079062, "dropped_complete_case": 7059, "r_squared": 0.1043466752595884, "adj_r_squared": 0.10347221536391771}
+Although the subgroup coefficients differ numerically across degree quintiles, the formal joint test does not provide sufficient evidence of degree-related heterogeneity in the REDDIT RET slope.
+The Q5 coefficient is not statistically different from the Q1 coefficient.
+Joint F=0.912707, p=0.455442; Q5-Q1=-0.00652066, p=0.47206.
+Q1 -> Q5 raw beta: 0.0122222 -> 0.0535733; beta*SD(peer return): 0.0336156 -> 0.0855179 percentage points.
+The stronger high-degree coefficients are also accompanied by larger standardized economic effects.
+
+full_sample / Model 2: {"sample": "full_sample", "model": "Model 2", "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE", "controls": ["ret_d_pct", "ret_20_2_pct", "ret_120_21_pct"], "n_obs": 2030273, "n_firms": 3549, "n_dates": 2013, "min_date": "2012-10-01", "max_date": "2020-09-30", "period_candidate_rows": 2079062, "dropped_complete_case": 48789, "r_squared": 0.10647133246773399, "adj_r_squared": 0.1055796752231144}
+Although the subgroup coefficients differ numerically across degree quintiles, the formal joint test does not provide sufficient evidence of degree-related heterogeneity in the REDDIT RET slope.
+The Q5 coefficient is not statistically different from the Q1 coefficient.
+Joint F=1.07941, p=0.364897; Q5-Q1=-0.00559863, p=0.535593.
+Q1 -> Q5 raw beta: 0.0125875 -> 0.0442394; beta*SD(peer return): 0.0345725 -> 0.0705855 percentage points.
+The stronger high-degree coefficients are also accompanied by larger standardized economic effects.
+
+late_sample / Model 1: {"sample": "late_sample", "model": "Model 1", "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE", "controls": [], "n_obs": 789081, "n_firms": 2860, "n_dates": 441, "min_date": "2019-01-02", "max_date": "2020-09-30", "period_candidate_rows": 790507, "dropped_complete_case": 1426, "r_squared": 0.1355778203278757, "adj_r_squared": 0.13508566929821442}
+Although the subgroup coefficients differ numerically across degree quintiles, the formal joint test does not provide sufficient evidence of degree-related heterogeneity in the REDDIT RET slope.
+The Q5 coefficient is not statistically different from the Q1 coefficient.
+Joint F=0.620383, p=0.647983; Q5-Q1=-0.0167222, p=0.273392.
+Q1 -> Q5 raw beta: 0.0397449 -> 0.431979; beta*SD(peer return): 0.105535 -> 0.889428 percentage points.
+The stronger high-degree coefficients are also accompanied by larger standardized economic effects.
+
+late_sample / Model 2: {"sample": "late_sample", "model": "Model 2", "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + Q2-Q5 + reddit_ret_pct:Q2-Q5 + controls + day FE", "controls": ["ret_d_pct", "ret_20_2_pct", "ret_120_21_pct"], "n_obs": 774085, "n_firms": 2815, "n_dates": 441, "min_date": "2019-01-02", "max_date": "2020-09-30", "period_candidate_rows": 790507, "dropped_complete_case": 16422, "r_squared": 0.13760730629866436, "adj_r_squared": 0.13710344723188206}
+Although the subgroup coefficients differ numerically across degree quintiles, the formal joint test does not provide sufficient evidence of degree-related heterogeneity in the REDDIT RET slope.
+The Q5 coefficient is not statistically different from the Q1 coefficient.
+Joint F=0.592226, p=0.668282; Q5-Q1=-0.0139667, p=0.359852.
+Q1 -> Q5 raw beta: 0.0395704 -> 0.468156; beta*SD(peer return): 0.10502 -> 0.965044 percentage points.
+The stronger high-degree coefficients are also accompanied by larger standardized economic effects.

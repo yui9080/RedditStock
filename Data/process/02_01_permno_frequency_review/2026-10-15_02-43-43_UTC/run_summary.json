@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "source": "C:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-15_02-43-43_UTC\\comment_ticker_long.parquet",
+  "source_sha256": "d171b4885ad0d6fe0707316819d68842cd3bebeab87648e9beb041a6288bfd78",
+  "total_mention_rows": 10049767,
+  "unique_permnos": 3767,
+  "review_rows": 300,
+  "columns": [
+    "permno",
+    "ticker",
+    "times",
+    "del"
+  ],
+  "ranking": "times descending, numeric permno ascending",
+  "count_unit": "one successful input comment-ticker-permno row",
+  "ticker_separator": "|",
+  "initial_del": 1,
+  "del_semantics": {
+    "1": "刪除",
+    "0": "保留"
+  },
+  "deletions_applied": false
+}

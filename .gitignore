@@ -8,6 +8,7 @@ venv/
 
 # Temporary dependencies
 .tmp_review_deps/
+.tmp_regression_deps/
 
 # =========================
 # VS Code / OS
@@ -30,9 +31,21 @@ Data/raw/
 
 # CSV data
 *.csv
+# CSV whitelist
+!monthly_network_summary.csv
+!top300_permno_review.csv
 
 # Parquet pipeline outputs
 Data/**/*.parquet
+
+# Intermediate outputs
+*.dropped.jsonl
+*.parquet.partial
+*.feather.partial
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
 
 #notebookbackup
 Notebook/archive/

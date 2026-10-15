@@ -1,0 +1,1635 @@
+{
+  "status": "complete_with_warnings",
+  "output": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_regression_panel\\2026-10-15_03-48-20_UTC\\04_regression_panel.parquet",
+  "output_rows": 7103381,
+  "sample_periods": {
+    "full_sample": [
+      "2012-11-01",
+      "2020-08-31"
+    ],
+    "late_sample": [
+      "2019-01-01",
+      "2020-08-31"
+    ]
+  },
+  "requested_start": "2012-11-01",
+  "requested_end": "2020-08-31",
+  "actual_sample": {
+    "min_date": "2012-11-01",
+    "max_date": "2020-08-31",
+    "n_dates": 1971,
+    "n_obs": 7103381
+  },
+  "integrity_checks": {
+    "observation_keys_preserved": true,
+    "date_columns_unit": "ns",
+    "sic_and_key_serialization_verified": true,
+    "output_rows_reconciled": true
+  },
+  "warmup_policy": "Full raw history for controls; output dates restricted only after stock controls and monthly ME.",
+  "observations_excluded_sample_dates": 1079644,
+  "network_run": "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC",
+  "crsp_source": "C:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_crsp.csv",
+  "crsp_sha256": "5d8678acca8fc6934acd84a7d2f2dac444e91d73d80dca5d5e4400dc2d804800",
+  "input_stats": {
+    "C:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_crsp.csv": [
+      682809022,
+      1791253469253891000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\run_summary.json": [
+      1402,
+      1792034263660085700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\monthly_network_summary.csv": [
+      7480,
+      1792034263660085700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2012-11\\edges.parquet": [
+      4891,
+      1792034209241186400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2012-11\\nodes.parquet": [
+      4084,
+      1792034209309166300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2012-12\\edges.parquet": [
+      4493,
+      1792034209319147600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2012-12\\nodes.parquet": [
+      3816,
+      1792034209319147600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-01\\edges.parquet": [
+      3850,
+      1792034209327388900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-01\\nodes.parquet": [
+      3483,
+      1792034209327388900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-02\\edges.parquet": [
+      3374,
+      1792034209336095700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-02\\nodes.parquet": [
+      3190,
+      1792034209336095700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-03\\edges.parquet": [
+      3057,
+      1792034209346182800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-03\\nodes.parquet": [
+      2966,
+      1792034209346182800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-04\\edges.parquet": [
+      2730,
+      1792034209346182800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-04\\nodes.parquet": [
+      2842,
+      1792034209346182800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-05\\edges.parquet": [
+      2878,
+      1792034209365135100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-05\\nodes.parquet": [
+      2904,
+      1792034209365135100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-06\\edges.parquet": [
+      2991,
+      1792034209365135100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-06\\nodes.parquet": [
+      3019,
+      1792034209377417100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-07\\edges.parquet": [
+      3155,
+      1792034209377417100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-07\\nodes.parquet": [
+      3116,
+      1792034209377417100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-08\\edges.parquet": [
+      3205,
+      1792034209393361800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-08\\nodes.parquet": [
+      3209,
+      1792034209396765400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-09\\edges.parquet": [
+      3185,
+      1792034209404633200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-09\\nodes.parquet": [
+      3268,
+      1792034209408028400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-10\\edges.parquet": [
+      3415,
+      1792034209414741500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-10\\nodes.parquet": [
+      3364,
+      1792034209416744000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-11\\edges.parquet": [
+      3427,
+      1792034209425117700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-11\\nodes.parquet": [
+      3397,
+      1792034209428124300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-12\\edges.parquet": [
+      3634,
+      1792034209434099700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2013-12\\nodes.parquet": [
+      3405,
+      1792034209439511300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-01\\edges.parquet": [
+      4501,
+      1792034209450741600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-01\\nodes.parquet": [
+      3968,
+      1792034209454626800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-02\\edges.parquet": [
+      6719,
+      1792034209468783000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-02\\nodes.parquet": [
+      4855,
+      1792034209472977100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-03\\edges.parquet": [
+      8857,
+      1792034209489699200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-03\\nodes.parquet": [
+      5372,
+      1792034209492699200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-04\\edges.parquet": [
+      9709,
+      1792034209511640300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-04\\nodes.parquet": [
+      5682,
+      1792034209511640300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-05\\edges.parquet": [
+      10557,
+      1792034209534944400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-05\\nodes.parquet": [
+      5809,
+      1792034209542162700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-06\\edges.parquet": [
+      10648,
+      1792034209561307800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-06\\nodes.parquet": [
+      5861,
+      1792034209565230500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-07\\edges.parquet": [
+      10016,
+      1792034209583952400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-07\\nodes.parquet": [
+      5778,
+      1792034209583952400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-08\\edges.parquet": [
+      8186,
+      1792034209607494300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-08\\nodes.parquet": [
+      5280,
+      1792034209607494300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-09\\edges.parquet": [
+      7331,
+      1792034209619998300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-09\\nodes.parquet": [
+      4937,
+      1792034209625963500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-10\\edges.parquet": [
+      6262,
+      1792034209638321000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-10\\nodes.parquet": [
+      4723,
+      1792034209645362000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-11\\edges.parquet": [
+      6103,
+      1792034209654705500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-11\\nodes.parquet": [
+      4755,
+      1792034209654705500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-12\\edges.parquet": [
+      6398,
+      1792034209672832400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2014-12\\nodes.parquet": [
+      4796,
+      1792034209672832400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-01\\edges.parquet": [
+      7397,
+      1792034209694364400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-01\\nodes.parquet": [
+      4966,
+      1792034209694364400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-02\\edges.parquet": [
+      8076,
+      1792034209714432500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-02\\nodes.parquet": [
+      5253,
+      1792034209717821900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-03\\edges.parquet": [
+      9255,
+      1792034209737871900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-03\\nodes.parquet": [
+      5665,
+      1792034209741144300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-04\\edges.parquet": [
+      10142,
+      1792034209762737000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-04\\nodes.parquet": [
+      6012,
+      1792034209765665000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-05\\edges.parquet": [
+      11631,
+      1792034209787884600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-05\\nodes.parquet": [
+      6560,
+      1792034209787884600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-06\\edges.parquet": [
+      15398,
+      1792034209892608500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-06\\nodes.parquet": [
+      7589,
+      1792034209897398700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-07\\edges.parquet": [
+      18539,
+      1792034209935863400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-07\\nodes.parquet": [
+      8364,
+      1792034209935863400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-08\\edges.parquet": [
+      22091,
+      1792034209987974700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-08\\nodes.parquet": [
+      9123,
+      1792034210003687600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-09\\edges.parquet": [
+      27268,
+      1792034210062297400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-09\\nodes.parquet": [
+      10007,
+      1792034210071622300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-10\\edges.parquet": [
+      31745,
+      1792034210147762400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-10\\nodes.parquet": [
+      10883,
+      1792034210158804000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-11\\edges.parquet": [
+      36404,
+      1792034210243717400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-11\\nodes.parquet": [
+      11634,
+      1792034210247046800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-12\\edges.parquet": [
+      43944,
+      1792034210344745700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2015-12\\nodes.parquet": [
+      12855,
+      1792034210352985400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-01\\edges.parquet": [
+      50884,
+      1792034210536832000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-01\\nodes.parquet": [
+      13543,
+      1792034210541527700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-02\\edges.parquet": [
+      51326,
+      1792034210660664600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-02\\nodes.parquet": [
+      13707,
+      1792034210662982500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-03\\edges.parquet": [
+      50755,
+      1792034210783024000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-03\\nodes.parquet": [
+      13610,
+      1792034210787910400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-04\\edges.parquet": [
+      60079,
+      1792034210918215500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-04\\nodes.parquet": [
+      14742,
+      1792034210920724700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-05\\edges.parquet": [
+      67414,
+      1792034211139018900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-05\\nodes.parquet": [
+      15830,
+      1792034211144772300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-06\\edges.parquet": [
+      68558,
+      1792034211302588800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-06\\nodes.parquet": [
+      15776,
+      1792034211307566000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-07\\edges.parquet": [
+      64277,
+      1792034211466318200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-07\\nodes.parquet": [
+      15329,
+      1792034211466318200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-08\\edges.parquet": [
+      75715,
+      1792034211734490500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-08\\nodes.parquet": [
+      16523,
+      1792034211734490500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-09\\edges.parquet": [
+      83467,
+      1792034211920667200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-09\\nodes.parquet": [
+      17126,
+      1792034211920667200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-10\\edges.parquet": [
+      77438,
+      1792034212193894100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-10\\nodes.parquet": [
+      16556,
+      1792034212199334600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-11\\edges.parquet": [
+      71063,
+      1792034212400140300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-11\\nodes.parquet": [
+      15720,
+      1792034212405611200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-12\\edges.parquet": [
+      65787,
+      1792034212569522600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2016-12\\nodes.parquet": [
+      15273,
+      1792034212569522600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-01\\edges.parquet": [
+      69417,
+      1792034212823862800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-01\\nodes.parquet": [
+      15932,
+      1792034212835534700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-02\\edges.parquet": [
+      78897,
+      1792034213143489400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-02\\nodes.parquet": [
+      16490,
+      1792034213159377800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-03\\edges.parquet": [
+      76608,
+      1792034213520874700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-03\\nodes.parquet": [
+      16564,
+      1792034213530395400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-04\\edges.parquet": [
+      81878,
+      1792034213846706500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-04\\nodes.parquet": [
+      17304,
+      1792034213852728300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-05\\edges.parquet": [
+      84349,
+      1792034214260759900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-05\\nodes.parquet": [
+      17349,
+      1792034214260759900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-06\\edges.parquet": [
+      86563,
+      1792034214641064000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-06\\nodes.parquet": [
+      17318,
+      1792034214641064000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-07\\edges.parquet": [
+      79307,
+      1792034214951069800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-07\\nodes.parquet": [
+      16401,
+      1792034214957118400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-08\\edges.parquet": [
+      74157,
+      1792034215265121100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-08\\nodes.parquet": [
+      16402,
+      1792034215265121100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-09\\edges.parquet": [
+      71069,
+      1792034215508626400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-09\\nodes.parquet": [
+      15938,
+      1792034215515882200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-10\\edges.parquet": [
+      71359,
+      1792034215791901600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-10\\nodes.parquet": [
+      15872,
+      1792034215800504800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-11\\edges.parquet": [
+      81200,
+      1792034216023709000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-11\\nodes.parquet": [
+      16636,
+      1792034216035833000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-12\\edges.parquet": [
+      82626,
+      1792034216354285400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2017-12\\nodes.parquet": [
+      16572,
+      1792034216359793900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-01\\edges.parquet": [
+      82390,
+      1792034216591741300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-01\\nodes.parquet": [
+      16639,
+      1792034216601346400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-02\\edges.parquet": [
+      74635,
+      1792034216787254100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-02\\nodes.parquet": [
+      16102,
+      1792034216787254100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-03\\edges.parquet": [
+      75813,
+      1792034217056040900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-03\\nodes.parquet": [
+      16186,
+      1792034217062122100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-04\\edges.parquet": [
+      74968,
+      1792034217266047900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-04\\nodes.parquet": [
+      16053,
+      1792034217269493800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-05\\edges.parquet": [
+      68222,
+      1792034217515016400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-05\\nodes.parquet": [
+      15054,
+      1792034217515016400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-06\\edges.parquet": [
+      67970,
+      1792034217690755300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-06\\nodes.parquet": [
+      15209,
+      1792034217693686500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-07\\edges.parquet": [
+      75422,
+      1792034217866068800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-07\\nodes.parquet": [
+      15947,
+      1792034217873417500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-08\\edges.parquet": [
+      76826,
+      1792034218114462000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-08\\nodes.parquet": [
+      15997,
+      1792034218121891700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-09\\edges.parquet": [
+      97191,
+      1792034218353315500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-09\\nodes.parquet": [
+      17975,
+      1792034218353315500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-10\\edges.parquet": [
+      135438,
+      1792034218771415200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-10\\nodes.parquet": [
+      19646,
+      1792034218784395400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-11\\edges.parquet": [
+      175313,
+      1792034219328736400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-11\\nodes.parquet": [
+      21233,
+      1792034219332846900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-12\\edges.parquet": [
+      203718,
+      1792034219957061000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2018-12\\nodes.parquet": [
+      22439,
+      1792034219967641100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-01\\edges.parquet": [
+      223721,
+      1792034220650866400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-01\\nodes.parquet": [
+      22857,
+      1792034220657305100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-02\\edges.parquet": [
+      257089,
+      1792034221511831700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-02\\nodes.parquet": [
+      23799,
+      1792034221528514300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-03\\edges.parquet": [
+      305876,
+      1792034222490702400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-03\\nodes.parquet": [
+      24530,
+      1792034222497969200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-04\\edges.parquet": [
+      329720,
+      1792034223471978800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-04\\nodes.parquet": [
+      25001,
+      1792034223477740800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-05\\edges.parquet": [
+      347385,
+      1792034224647345800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-05\\nodes.parquet": [
+      24906,
+      1792034224655914800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-06\\edges.parquet": [
+      362672,
+      1792034225852631400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-06\\nodes.parquet": [
+      25362,
+      1792034225859021900
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-07\\edges.parquet": [
+      394921,
+      1792034227139546800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-07\\nodes.parquet": [
+      25924,
+      1792034227145580000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-08\\edges.parquet": [
+      483142,
+      1792034228607954100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-08\\nodes.parquet": [
+      26289,
+      1792034228615070700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-09\\edges.parquet": [
+      496444,
+      1792034229884305800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-09\\nodes.parquet": [
+      25693,
+      1792034229890417800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-10\\edges.parquet": [
+      491586,
+      1792034231352683100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-10\\nodes.parquet": [
+      25733,
+      1792034231359942200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-11\\edges.parquet": [
+      491902,
+      1792034232825054000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-11\\nodes.parquet": [
+      25873,
+      1792034232832479500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-12\\edges.parquet": [
+      532366,
+      1792034234410809200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2019-12\\nodes.parquet": [
+      26773,
+      1792034234420043700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-01\\edges.parquet": [
+      557653,
+      1792034236102074100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-01\\nodes.parquet": [
+      27792,
+      1792034236109831800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-02\\edges.parquet": [
+      585342,
+      1792034237821061500
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-02\\nodes.parquet": [
+      28321,
+      1792034237829055400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-03\\edges.parquet": [
+      688243,
+      1792034239961731400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-03\\nodes.parquet": [
+      29421,
+      1792034239971884100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-04\\edges.parquet": [
+      816231,
+      1792034242906081800
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-04\\nodes.parquet": [
+      31391,
+      1792034242918457300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-05\\edges.parquet": [
+      1014638,
+      1792034246366277400
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-05\\nodes.parquet": [
+      33319,
+      1792034246378279600
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-06\\edges.parquet": [
+      1147625,
+      1792034250971190200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-06\\nodes.parquet": [
+      36454,
+      1792034250986947100
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-07\\edges.parquet": [
+      1401558,
+      1792034257079100300
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-07\\nodes.parquet": [
+      39159,
+      1792034257102697200
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-08\\edges.parquet": [
+      1608546,
+      1792034263632387000
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC\\2020-08\\nodes.parquet": [
+      41059,
+      1792034263645542700
+    ],
+    "C:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_name.csv": [
+      9448965,
+      1791186876682875500
+    ]
+  },
+  "diagnostics": {
+    "crsp_input_rows": 8183971,
+    "invalid_key_rows_dropped": 0,
+    "exact_duplicate_rows_dropped": 946,
+    "crsp_observations_before_merge": 8183025,
+    "missing_or_invalid_ret_rows": 126006,
+    "has_crsp_sic": false,
+    "observations_excluded_sample_dates": 1079644,
+    "observations_with_valid_reddit_network": 1989021,
+    "observations_with_reddit_ret": 1907759,
+    "observations_with_all_baseline_variables": 1865637,
+    "observations_missing_ret_t1": 104890,
+    "observations_missing_illiquidity": 160409,
+    "observations_missing_idio_vol": 7103381,
+    "observations_missing_log_me": 119281,
+    "observations_missing_log_bm": 7103381
+  },
+  "months": [
+    {
+      "network_month": "2012-11",
+      "rows": 76537,
+      "network_available": true,
+      "network_nodes_with_crsp": 4704,
+      "rows_with_reddit_ret": 4431,
+      "seconds": 0.7608289999989211
+    },
+    {
+      "network_month": "2012-12",
+      "rows": 72645,
+      "network_available": true,
+      "network_nodes_with_crsp": 3925,
+      "rows_with_reddit_ret": 3625,
+      "seconds": 0.630241400000159
+    },
+    {
+      "network_month": "2013-01",
+      "rows": 75966,
+      "network_available": true,
+      "network_nodes_with_crsp": 3277,
+      "rows_with_reddit_ret": 3004,
+      "seconds": 0.7179331000006641
+    },
+    {
+      "network_month": "2013-02",
+      "rows": 68641,
+      "network_available": true,
+      "network_nodes_with_crsp": 2565,
+      "rows_with_reddit_ret": 2375,
+      "seconds": 0.5861065999997663
+    },
+    {
+      "network_month": "2013-03",
+      "rows": 72061,
+      "network_available": true,
+      "network_nodes_with_crsp": 2480,
+      "rows_with_reddit_ret": 2280,
+      "seconds": 0.6037314999994123
+    },
+    {
+      "network_month": "2013-04",
+      "rows": 79120,
+      "network_available": true,
+      "network_nodes_with_crsp": 2477,
+      "rows_with_reddit_ret": 2313,
+      "seconds": 0.6300163000014436
+    },
+    {
+      "network_month": "2013-05",
+      "rows": 79179,
+      "network_available": true,
+      "network_nodes_with_crsp": 2744,
+      "rows_with_reddit_ret": 2461,
+      "seconds": 0.6677402000004804
+    },
+    {
+      "network_month": "2013-06",
+      "rows": 71982,
+      "network_available": true,
+      "network_nodes_with_crsp": 2686,
+      "rows_with_reddit_ret": 2426,
+      "seconds": 0.5052927000015188
+    },
+    {
+      "network_month": "2013-07",
+      "rows": 79221,
+      "network_available": true,
+      "network_nodes_with_crsp": 3194,
+      "rows_with_reddit_ret": 2864,
+      "seconds": 0.5830091999996512
+    },
+    {
+      "network_month": "2013-08",
+      "rows": 79399,
+      "network_available": true,
+      "network_nodes_with_crsp": 3586,
+      "rows_with_reddit_ret": 3278,
+      "seconds": 0.4906090000004042
+    },
+    {
+      "network_month": "2013-09",
+      "rows": 72131,
+      "network_available": true,
+      "network_nodes_with_crsp": 3437,
+      "rows_with_reddit_ret": 3067,
+      "seconds": 0.4025971999999456
+    },
+    {
+      "network_month": "2013-10",
+      "rows": 83199,
+      "network_available": true,
+      "network_nodes_with_crsp": 4262,
+      "rows_with_reddit_ret": 3848,
+      "seconds": 0.41216540000095847
+    },
+    {
+      "network_month": "2013-11",
+      "rows": 72533,
+      "network_available": true,
+      "network_nodes_with_crsp": 3862,
+      "rows_with_reddit_ret": 3502,
+      "seconds": 0.3850332999991224
+    },
+    {
+      "network_month": "2013-12",
+      "rows": 76089,
+      "network_available": true,
+      "network_nodes_with_crsp": 4204,
+      "rows_with_reddit_ret": 3994,
+      "seconds": 0.40577310000116995
+    },
+    {
+      "network_month": "2014-01",
+      "rows": 76005,
+      "network_available": true,
+      "network_nodes_with_crsp": 4946,
+      "rows_with_reddit_ret": 4715,
+      "seconds": 0.3947738999995636
+    },
+    {
+      "network_month": "2014-02",
+      "rows": 69015,
+      "network_available": true,
+      "network_nodes_with_crsp": 5870,
+      "rows_with_reddit_ret": 5553,
+      "seconds": 0.366919300000518
+    },
+    {
+      "network_month": "2014-03",
+      "rows": 76404,
+      "network_available": true,
+      "network_nodes_with_crsp": 7720,
+      "rows_with_reddit_ret": 7258,
+      "seconds": 0.40605560000039986
+    },
+    {
+      "network_month": "2014-04",
+      "rows": 76896,
+      "network_available": true,
+      "network_nodes_with_crsp": 8468,
+      "rows_with_reddit_ret": 7943,
+      "seconds": 0.3903731999998854
+    },
+    {
+      "network_month": "2014-05",
+      "rows": 76925,
+      "network_available": true,
+      "network_nodes_with_crsp": 8582,
+      "rows_with_reddit_ret": 8133,
+      "seconds": 0.39399869999942894
+    },
+    {
+      "network_month": "2014-06",
+      "rows": 77056,
+      "network_available": true,
+      "network_nodes_with_crsp": 8743,
+      "rows_with_reddit_ret": 8155,
+      "seconds": 0.40046450000045297
+    },
+    {
+      "network_month": "2014-07",
+      "rows": 81116,
+      "network_available": true,
+      "network_nodes_with_crsp": 9132,
+      "rows_with_reddit_ret": 8490,
+      "seconds": 0.41039920000002894
+    },
+    {
+      "network_month": "2014-08",
+      "rows": 77784,
+      "network_available": true,
+      "network_nodes_with_crsp": 8003,
+      "rows_with_reddit_ret": 7352,
+      "seconds": 0.3954637000006187
+    },
+    {
+      "network_month": "2014-09",
+      "rows": 77725,
+      "network_available": true,
+      "network_nodes_with_crsp": 7120,
+      "rows_with_reddit_ret": 6553,
+      "seconds": 0.39641690000098606
+    },
+    {
+      "network_month": "2014-10",
+      "rows": 85365,
+      "network_available": true,
+      "network_nodes_with_crsp": 7286,
+      "rows_with_reddit_ret": 6614,
+      "seconds": 0.43175090000113414
+    },
+    {
+      "network_month": "2014-11",
+      "rows": 70736,
+      "network_available": true,
+      "network_nodes_with_crsp": 6176,
+      "rows_with_reddit_ret": 5572,
+      "seconds": 0.38373200000023644
+    },
+    {
+      "network_month": "2014-12",
+      "rows": 81902,
+      "network_available": true,
+      "network_nodes_with_crsp": 7309,
+      "rows_with_reddit_ret": 6539,
+      "seconds": 0.4114650999999867
+    },
+    {
+      "network_month": "2015-01",
+      "rows": 74226,
+      "network_available": true,
+      "network_nodes_with_crsp": 6840,
+      "rows_with_reddit_ret": 6140,
+      "seconds": 0.39911120000033407
+    },
+    {
+      "network_month": "2015-02",
+      "rows": 70502,
+      "network_available": true,
+      "network_nodes_with_crsp": 7024,
+      "rows_with_reddit_ret": 6428,
+      "seconds": 0.3731019999995624
+    },
+    {
+      "network_month": "2015-03",
+      "rows": 81402,
+      "network_available": true,
+      "network_nodes_with_crsp": 9016,
+      "rows_with_reddit_ret": 8400,
+      "seconds": 0.4138022999995883
+    },
+    {
+      "network_month": "2015-04",
+      "rows": 77707,
+      "network_available": true,
+      "network_nodes_with_crsp": 9577,
+      "rows_with_reddit_ret": 8905,
+      "seconds": 0.4049373999987438
+    },
+    {
+      "network_month": "2015-05",
+      "rows": 74101,
+      "network_available": true,
+      "network_nodes_with_crsp": 10304,
+      "rows_with_reddit_ret": 9444,
+      "seconds": 0.5935317000003124
+    },
+    {
+      "network_month": "2015-06",
+      "rows": 81607,
+      "network_available": true,
+      "network_nodes_with_crsp": 13685,
+      "rows_with_reddit_ret": 12805,
+      "seconds": 0.7100962000004074
+    },
+    {
+      "network_month": "2015-07",
+      "rows": 81868,
+      "network_available": true,
+      "network_nodes_with_crsp": 15195,
+      "rows_with_reddit_ret": 14293,
+      "seconds": 0.6452872999998363
+    },
+    {
+      "network_month": "2015-08",
+      "rows": 78369,
+      "network_available": true,
+      "network_nodes_with_crsp": 15781,
+      "rows_with_reddit_ret": 14803,
+      "seconds": 0.6175655999995797
+    },
+    {
+      "network_month": "2015-09",
+      "rows": 78147,
+      "network_available": true,
+      "network_nodes_with_crsp": 17661,
+      "rows_with_reddit_ret": 16570,
+      "seconds": 0.6824697000010929
+    },
+    {
+      "network_month": "2015-10",
+      "rows": 81800,
+      "network_available": true,
+      "network_nodes_with_crsp": 20069,
+      "rows_with_reddit_ret": 18904,
+      "seconds": 0.7761496999992232
+    },
+    {
+      "network_month": "2015-11",
+      "rows": 74269,
+      "network_available": true,
+      "network_nodes_with_crsp": 19636,
+      "rows_with_reddit_ret": 18374,
+      "seconds": 0.6461116000009497
+    },
+    {
+      "network_month": "2015-12",
+      "rows": 81525,
+      "network_available": true,
+      "network_nodes_with_crsp": 23091,
+      "rows_with_reddit_ret": 21529,
+      "seconds": 0.7345494000001054
+    },
+    {
+      "network_month": "2016-01",
+      "rows": 69961,
+      "network_available": true,
+      "network_nodes_with_crsp": 21077,
+      "rows_with_reddit_ret": 19534,
+      "seconds": 0.7533311000006506
+    },
+    {
+      "network_month": "2016-02",
+      "rows": 73195,
+      "network_available": true,
+      "network_nodes_with_crsp": 22354,
+      "rows_with_reddit_ret": 20820,
+      "seconds": 0.6229863999997178
+    },
+    {
+      "network_month": "2016-03",
+      "rows": 80237,
+      "network_available": true,
+      "network_nodes_with_crsp": 24552,
+      "rows_with_reddit_ret": 22919,
+      "seconds": 0.7169535999983054
+    },
+    {
+      "network_month": "2016-04",
+      "rows": 76418,
+      "network_available": true,
+      "network_nodes_with_crsp": 25104,
+      "rows_with_reddit_ret": 23697,
+      "seconds": 0.5345869000011589
+    },
+    {
+      "network_month": "2016-05",
+      "rows": 76219,
+      "network_available": true,
+      "network_nodes_with_crsp": 26405,
+      "rows_with_reddit_ret": 25061,
+      "seconds": 0.531010900000183
+    },
+    {
+      "network_month": "2016-06",
+      "rows": 79639,
+      "network_available": true,
+      "network_nodes_with_crsp": 27415,
+      "rows_with_reddit_ret": 25941,
+      "seconds": 0.5843943999989278
+    },
+    {
+      "network_month": "2016-07",
+      "rows": 72219,
+      "network_available": true,
+      "network_nodes_with_crsp": 25087,
+      "rows_with_reddit_ret": 23684,
+      "seconds": 0.519307900000058
+    },
+    {
+      "network_month": "2016-08",
+      "rows": 82945,
+      "network_available": true,
+      "network_nodes_with_crsp": 30098,
+      "rows_with_reddit_ret": 28371,
+      "seconds": 0.578836799999408
+    },
+    {
+      "network_month": "2016-09",
+      "rows": 75308,
+      "network_available": true,
+      "network_nodes_with_crsp": 27779,
+      "rows_with_reddit_ret": 26330,
+      "seconds": 0.527950099998634
+    },
+    {
+      "network_month": "2016-10",
+      "rows": 75342,
+      "network_available": true,
+      "network_nodes_with_crsp": 26816,
+      "rows_with_reddit_ret": 25514,
+      "seconds": 0.5228793999995105
+    },
+    {
+      "network_month": "2016-11",
+      "rows": 75248,
+      "network_available": true,
+      "network_nodes_with_crsp": 25422,
+      "rows_with_reddit_ret": 24162,
+      "seconds": 0.5358691000001272
+    },
+    {
+      "network_month": "2016-12",
+      "rows": 74889,
+      "network_available": true,
+      "network_nodes_with_crsp": 25349,
+      "rows_with_reddit_ret": 24194,
+      "seconds": 0.5318237999999837
+    },
+    {
+      "network_month": "2017-01",
+      "rows": 71214,
+      "network_available": true,
+      "network_nodes_with_crsp": 24861,
+      "rows_with_reddit_ret": 23801,
+      "seconds": 0.49095889999989595
+    },
+    {
+      "network_month": "2017-02",
+      "rows": 67690,
+      "network_available": true,
+      "network_nodes_with_crsp": 24713,
+      "rows_with_reddit_ret": 23744,
+      "seconds": 0.4873817000006966
+    },
+    {
+      "network_month": "2017-03",
+      "rows": 81796,
+      "network_available": true,
+      "network_nodes_with_crsp": 30134,
+      "rows_with_reddit_ret": 28864,
+      "seconds": 0.7437747000003583
+    },
+    {
+      "network_month": "2017-04",
+      "rows": 67500,
+      "network_available": true,
+      "network_nodes_with_crsp": 25356,
+      "rows_with_reddit_ret": 24330,
+      "seconds": 0.5004755999998451
+    },
+    {
+      "network_month": "2017-05",
+      "rows": 78309,
+      "network_available": true,
+      "network_nodes_with_crsp": 29466,
+      "rows_with_reddit_ret": 28299,
+      "seconds": 0.5319140999999945
+    },
+    {
+      "network_month": "2017-06",
+      "rows": 78161,
+      "network_available": true,
+      "network_nodes_with_crsp": 29015,
+      "rows_with_reddit_ret": 27871,
+      "seconds": 0.5660858999999618
+    },
+    {
+      "network_month": "2017-07",
+      "rows": 71094,
+      "network_available": true,
+      "network_nodes_with_crsp": 25308,
+      "rows_with_reddit_ret": 24247,
+      "seconds": 0.5560189000007085
+    },
+    {
+      "network_month": "2017-08",
+      "rows": 81846,
+      "network_available": true,
+      "network_nodes_with_crsp": 29477,
+      "rows_with_reddit_ret": 28394,
+      "seconds": 0.6847985000003973
+    },
+    {
+      "network_month": "2017-09",
+      "rows": 71038,
+      "network_available": true,
+      "network_nodes_with_crsp": 24753,
+      "rows_with_reddit_ret": 23744,
+      "seconds": 0.6328853000013623
+    },
+    {
+      "network_month": "2017-10",
+      "rows": 78012,
+      "network_available": true,
+      "network_nodes_with_crsp": 27113,
+      "rows_with_reddit_ret": 25771,
+      "seconds": 0.6426159000002372
+    },
+    {
+      "network_month": "2017-11",
+      "rows": 74517,
+      "network_available": true,
+      "network_nodes_with_crsp": 26694,
+      "rows_with_reddit_ret": 25518,
+      "seconds": 0.6948661999995238
+    },
+    {
+      "network_month": "2017-12",
+      "rows": 70957,
+      "network_available": true,
+      "network_nodes_with_crsp": 25662,
+      "rows_with_reddit_ret": 24508,
+      "seconds": 0.6615161999998236
+    },
+    {
+      "network_month": "2018-01",
+      "rows": 74311,
+      "network_available": true,
+      "network_nodes_with_crsp": 27143,
+      "rows_with_reddit_ret": 25946,
+      "seconds": 0.6263185999996495
+    },
+    {
+      "network_month": "2018-02",
+      "rows": 67256,
+      "network_available": true,
+      "network_nodes_with_crsp": 23589,
+      "rows_with_reddit_ret": 22468,
+      "seconds": 0.5922576000011759
+    },
+    {
+      "network_month": "2018-03",
+      "rows": 74332,
+      "network_available": true,
+      "network_nodes_with_crsp": 26395,
+      "rows_with_reddit_ret": 25177,
+      "seconds": 0.7390830000003916
+    },
+    {
+      "network_month": "2018-04",
+      "rows": 74281,
+      "network_available": true,
+      "network_nodes_with_crsp": 26310,
+      "rows_with_reddit_ret": 24996,
+      "seconds": 0.6775103999989369
+    },
+    {
+      "network_month": "2018-05",
+      "rows": 77999,
+      "network_available": true,
+      "network_nodes_with_crsp": 26171,
+      "rows_with_reddit_ret": 24653,
+      "seconds": 0.6264274000004662
+    },
+    {
+      "network_month": "2018-06",
+      "rows": 74502,
+      "network_available": true,
+      "network_nodes_with_crsp": 25200,
+      "rows_with_reddit_ret": 23760,
+      "seconds": 0.5354578999995283
+    },
+    {
+      "network_month": "2018-07",
+      "rows": 74713,
+      "network_available": true,
+      "network_nodes_with_crsp": 25733,
+      "rows_with_reddit_ret": 24263,
+      "seconds": 0.5092313000004651
+    },
+    {
+      "network_month": "2018-08",
+      "rows": 82052,
+      "network_available": true,
+      "network_nodes_with_crsp": 28144,
+      "rows_with_reddit_ret": 26488,
+      "seconds": 0.5641320000013366
+    },
+    {
+      "network_month": "2018-09",
+      "rows": 67752,
+      "network_available": true,
+      "network_nodes_with_crsp": 25141,
+      "rows_with_reddit_ret": 23944,
+      "seconds": 0.522220799999559
+    },
+    {
+      "network_month": "2018-10",
+      "rows": 82124,
+      "network_available": true,
+      "network_nodes_with_crsp": 32679,
+      "rows_with_reddit_ret": 31423,
+      "seconds": 0.5577663999993092
+    },
+    {
+      "network_month": "2018-11",
+      "rows": 74993,
+      "network_available": true,
+      "network_nodes_with_crsp": 31505,
+      "rows_with_reddit_ret": 30434,
+      "seconds": 0.5472955999994156
+    },
+    {
+      "network_month": "2018-12",
+      "rows": 67676,
+      "network_available": true,
+      "network_nodes_with_crsp": 29160,
+      "rows_with_reddit_ret": 28077,
+      "seconds": 0.5549266999987594
+    },
+    {
+      "network_month": "2019-01",
+      "rows": 74481,
+      "network_available": true,
+      "network_nodes_with_crsp": 32179,
+      "rows_with_reddit_ret": 31045,
+      "seconds": 0.7303155999998125
+    },
+    {
+      "network_month": "2019-02",
+      "rows": 67300,
+      "network_available": true,
+      "network_nodes_with_crsp": 29751,
+      "rows_with_reddit_ret": 28932,
+      "seconds": 0.686380500001178
+    },
+    {
+      "network_month": "2019-03",
+      "rows": 74254,
+      "network_available": true,
+      "network_nodes_with_crsp": 33550,
+      "rows_with_reddit_ret": 32668,
+      "seconds": 0.62319910000042
+    },
+    {
+      "network_month": "2019-04",
+      "rows": 74216,
+      "network_available": true,
+      "network_nodes_with_crsp": 33203,
+      "rows_with_reddit_ret": 32531,
+      "seconds": 0.601210999999239
+    },
+    {
+      "network_month": "2019-05",
+      "rows": 77989,
+      "network_available": true,
+      "network_nodes_with_crsp": 34303,
+      "rows_with_reddit_ret": 33642,
+      "seconds": 0.6326779000009992
+    },
+    {
+      "network_month": "2019-06",
+      "rows": 71009,
+      "network_available": true,
+      "network_nodes_with_crsp": 31552,
+      "rows_with_reddit_ret": 30892,
+      "seconds": 0.6691141999999672
+    },
+    {
+      "network_month": "2019-07",
+      "rows": 78322,
+      "network_available": true,
+      "network_nodes_with_crsp": 35128,
+      "rows_with_reddit_ret": 34381,
+      "seconds": 0.6897019999996701
+    },
+    {
+      "network_month": "2019-08",
+      "rows": 78250,
+      "network_available": true,
+      "network_nodes_with_crsp": 35328,
+      "rows_with_reddit_ret": 34580,
+      "seconds": 0.8129898000006506
+    },
+    {
+      "network_month": "2019-09",
+      "rows": 71080,
+      "network_available": true,
+      "network_nodes_with_crsp": 31640,
+      "rows_with_reddit_ret": 31020,
+      "seconds": 0.7067628999993758
+    },
+    {
+      "network_month": "2019-10",
+      "rows": 81738,
+      "network_available": true,
+      "network_nodes_with_crsp": 36308,
+      "rows_with_reddit_ret": 35411,
+      "seconds": 0.7547460999994655
+    },
+    {
+      "network_month": "2019-11",
+      "rows": 70997,
+      "network_available": true,
+      "network_nodes_with_crsp": 31789,
+      "rows_with_reddit_ret": 31169,
+      "seconds": 0.6999507000000449
+    },
+    {
+      "network_month": "2019-12",
+      "rows": 74328,
+      "network_available": true,
+      "network_nodes_with_crsp": 34557,
+      "rows_with_reddit_ret": 34011,
+      "seconds": 0.8126775999990059
+    },
+    {
+      "network_month": "2020-01",
+      "rows": 74054,
+      "network_available": true,
+      "network_nodes_with_crsp": 35661,
+      "rows_with_reddit_ret": 34968,
+      "seconds": 0.6180199999998877
+    },
+    {
+      "network_month": "2020-02",
+      "rows": 67078,
+      "network_available": true,
+      "network_nodes_with_crsp": 32555,
+      "rows_with_reddit_ret": 31871,
+      "seconds": 0.5390241000004607
+    },
+    {
+      "network_month": "2020-03",
+      "rows": 77581,
+      "network_available": true,
+      "network_nodes_with_crsp": 39472,
+      "rows_with_reddit_ret": 38724,
+      "seconds": 0.603345999999874
+    },
+    {
+      "network_month": "2020-04",
+      "rows": 73990,
+      "network_available": true,
+      "network_nodes_with_crsp": 39243,
+      "rows_with_reddit_ret": 38697,
+      "seconds": 0.6216152999986662
+    },
+    {
+      "network_month": "2020-05",
+      "rows": 70385,
+      "network_available": true,
+      "network_nodes_with_crsp": 39138,
+      "rows_with_reddit_ret": 38610,
+      "seconds": 0.6856496999989758
+    },
+    {
+      "network_month": "2020-06",
+      "rows": 77445,
+      "network_available": true,
+      "network_nodes_with_crsp": 45882,
+      "rows_with_reddit_ret": 45421,
+      "seconds": 0.6890972000001057
+    },
+    {
+      "network_month": "2020-07",
+      "rows": 77625,
+      "network_available": true,
+      "network_nodes_with_crsp": 48106,
+      "rows_with_reddit_ret": 47776,
+      "seconds": 0.7590134000001854
+    },
+    {
+      "network_month": "2020-08",
+      "rows": 74359,
+      "network_available": true,
+      "network_nodes_with_crsp": 47859,
+      "rows_with_reddit_ret": 47523,
+      "seconds": 0.7427669000007882
+    }
+  ],
+  "warnings": [
+    {
+      "message": "No SHROUT: using supplied daily capitalization, not reconstructing it.",
+      "column": "DlyCap",
+      "unit": "thousand_usd"
+    },
+    {
+      "message": "Dropped exactly identical CRSP source duplicates after verifying every original column.",
+      "count": 946,
+      "duplicate_keys": 908
+    },
+    {
+      "message": "BM not built: no BM/Compustat input (requires PERMNO and actual availability dates)."
+    },
+    {
+      "message": "Idiosyncratic volatility not built: no daily Fama-French factors; nothing downloaded.",
+      "missing": [
+        "date",
+        "RF",
+        "MKT_RF",
+        "SMB",
+        "HML"
+      ]
+    }
+  ],
+  "me_unit": "thousand_usd",
+  "book_equity_unit": null,
+  "me_method": "DlyCap as provided; configured unit=thousand_usd",
+  "idio_model": "FF3",
+  "idio_window": 20,
+  "idio_minimum": 15,
+  "factor_unit": "decimal",
+  "idio_built": false,
+  "idio_diagnostics": {
+    "estimated_windows": 0,
+    "rank_deficient_windows": 0
+  },
+  "bm_built": false,
+  "regression_executed": false,
+  "illiquidity_note": "Amihud illiquidity is an implementation choice because Wang and Zhang (2024) do not provide an explicit formula in the available paper text.",
+  "idio_note": "FF3/previous-20-day residual standard deviation (ddof=1) is an implementation choice, not a verified original-paper specification.",
+  "illiquidity_scale": 1000000.0,
+  "illiquidity_window": "previous 20 stock trading observations, minimum 10 valid",
+  "return_windows": {
+    "ret_20_2": "shift(2), 19 observations",
+    "ret_120_21": "shift(21), 100 observations"
+  },
+  "industry_weight": "previous stock trading observation ME; all CRSP stocks, same effective two-digit SIC, focal excluded",
+  "baseline_variables": [
+    "ret_t1",
+    "ret_d",
+    "reddit_ret",
+    "ret_20_2",
+    "ret_120_21",
+    "illiquidity"
+  ],
+  "missing_values_imputed": false,
+  "winsorized": false,
+  "lookahead_checks": "passed for every output month",
+  "runtime_seconds": 211.35066519999964
+}

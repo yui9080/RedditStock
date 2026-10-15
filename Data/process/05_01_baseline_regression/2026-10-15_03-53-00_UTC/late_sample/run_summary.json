@@ -1,0 +1,179 @@
+{
+  "status": "complete",
+  "stage": "05_01",
+  "panel": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_regression_panel\\2026-10-15_03-48-20_UTC\\04_regression_panel.parquet",
+  "panel_sha256": "cb3b3f522b34ab81ffe4c3c702c044ffc736f44c6e204f71a782ca37334e9fcb",
+  "requested_start": "2019-01-01",
+  "requested_end": "2020-08-31",
+  "network_years": [
+    2019,
+    2020
+  ],
+  "network_months": [
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08"
+  ],
+  "period_rows_before_network_filter": 1486481,
+  "excluded_network_filter": 0,
+  "period_sample": {
+    "n_obs": 1486481,
+    "n_firms": 3899,
+    "n_dates": 420,
+    "min_date": "2019-01-02",
+    "max_date": "2020-08-31"
+  },
+  "models": [
+    {
+      "model": "Model 1",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + day FE",
+      "n_obs": 712700,
+      "n_firms": 2778,
+      "n_dates": 420,
+      "min_date": "2019-01-02",
+      "max_date": "2020-08-31",
+      "candidate_observations": 1486481,
+      "dropped_missing": 773781,
+      "missing_by_variable": {
+        "ret_t1_pct": 17455,
+        "reddit_ret_pct": 772609
+      },
+      "status": "estimated",
+      "r_squared": 0.1358226142582133,
+      "adj_r_squared": 0.1353130463753872,
+      "df_model": 421,
+      "p_value_reference_df": 2777,
+      "absorbed_fe_standard_error_multiplier": 1.0002940830760514,
+      "reddit_coefficient": 0.03665245798054244,
+      "reddit_t_stat": 1.1900155544190345,
+      "reddit_p_value": 0.2341420031965711,
+      "coefficient_sign": "positive",
+      "significant_5pct": false,
+      "positive_sign_consistent_with_user_paper_reference": true,
+      "runtime_seconds": 1.1716527000007773
+    },
+    {
+      "model": "Model 2",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + ret_d_pct + ret_20_2_pct + ret_120_21_pct + day FE",
+      "n_obs": 699484,
+      "n_firms": 2734,
+      "n_dates": 420,
+      "min_date": "2019-01-02",
+      "max_date": "2020-08-31",
+      "candidate_observations": 1486481,
+      "dropped_missing": 786997,
+      "missing_by_variable": {
+        "ret_t1_pct": 17455,
+        "reddit_ret_pct": 772609,
+        "ret_d_pct": 17448,
+        "ret_20_2_pct": 24820,
+        "ret_120_21_pct": 58914
+      },
+      "status": "estimated",
+      "r_squared": 0.13790851493389322,
+      "adj_r_squared": 0.13738686486353735,
+      "df_model": 424,
+      "p_value_reference_df": 2733,
+      "absorbed_fe_standard_error_multiplier": 1.0002996432596205,
+      "reddit_coefficient": 0.035231149508422446,
+      "reddit_t_stat": 1.1293028682062571,
+      "reddit_p_value": 0.2588692016598791,
+      "coefficient_sign": "positive",
+      "significant_5pct": false,
+      "positive_sign_consistent_with_user_paper_reference": true,
+      "runtime_seconds": 1.4768447000005835
+    },
+    {
+      "model": "Model 3",
+      "formula": "ret_t1_pct ~ 1 + reddit_ret_pct + ret_d_pct + ret_20_2_pct + ret_120_21_pct + illiquidity + day FE",
+      "n_obs": 699178,
+      "n_firms": 2734,
+      "n_dates": 420,
+      "min_date": "2019-01-02",
+      "max_date": "2020-08-31",
+      "candidate_observations": 1486481,
+      "dropped_missing": 787303,
+      "missing_by_variable": {
+        "ret_t1_pct": 17455,
+        "reddit_ret_pct": 772609,
+        "ret_d_pct": 17448,
+        "ret_20_2_pct": 24820,
+        "ret_120_21_pct": 58914,
+        "illiquidity": 28380
+      },
+      "status": "estimated",
+      "r_squared": 0.13796298445260902,
+      "adj_r_squared": 0.13743990448788312,
+      "df_model": 425,
+      "p_value_reference_df": 2733,
+      "absorbed_fe_standard_error_multiplier": 1.0002997748893905,
+      "reddit_coefficient": 0.03516623013180635,
+      "reddit_t_stat": 1.1264059674221314,
+      "reddit_p_value": 0.26009261680682944,
+      "coefficient_sign": "positive",
+      "significant_5pct": false,
+      "positive_sign_consistent_with_user_paper_reference": true,
+      "runtime_seconds": 1.5610818000004656
+    }
+  ],
+  "warnings": [
+    {
+      "message": "ret_t1: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 17455
+    },
+    {
+      "message": "reddit_ret: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 772609
+    },
+    {
+      "message": "ret_d: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 17448
+    },
+    {
+      "message": "ret_20_2: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 24820
+    },
+    {
+      "message": "ret_120_21: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 58914
+    },
+    {
+      "message": "illiquidity: missing/nonfinite values; each model applies its own complete-case filter.",
+      "count": 28380
+    }
+  ],
+  "day_fixed_effects": true,
+  "firm_fixed_effects": false,
+  "cluster": "PERMNO",
+  "covariance_debiased": true,
+  "p_value_df": "n_firms-1",
+  "covariance_correction": "CR1: G/(G-1) * (N-1)/(N-K_total), including absorbed day FE",
+  "coefficient_scale": "percent-point dependent / percent-point return predictors; coefficient is actual slope",
+  "paper_reporting_scale": "coefficient_times_100; not used in estimation",
+  "carryover_ratio_definition": "coefficient_times_100 / 100 = actual slope",
+  "versions": {
+    "linearmodels": "7.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scipy": "1.18.0"
+  },
+  "runtime_seconds": 7.458990499999345,
+  "output_directory": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_01_baseline_regression\\2026-10-15_03-53-00_UTC\\late_sample"
+}

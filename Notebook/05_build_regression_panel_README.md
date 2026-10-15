@@ -1,5 +1,16 @@
 # 05 daily regression panel
 
+## Unified sample dates
+
+`regression_samples.py` defines full_sample = 2012-11-01 to 2020-08-31 and
+late_sample = 2019-01-01 to 2020-08-31, inclusive, for 05 through 05_03.
+05 writes the full-sample date range by default; downstream scripts select the
+late subset. Optional --start/--end are explicit overrides recorded in metadata.
+The complete raw CRSP history remains available while calculating lagged
+returns, prior-month ME and industry returns; only output dates are restricted.
+Rows excluded by this date restriction are counted separately. ret_t1 on the
+last predictor date can refer to the next trading observation after 2020-08-31.
+
 Run `python Notebook/05_build_regression_panel.py`. The program uses the newest
 completed **native PERMNO** network under `04_monthly_ticker_network`, full
 `Data/raw/stock/RAW_crsp.csv`, and the effective SIC history in `RAW_name.csv`.
@@ -16,9 +27,10 @@ Each run creates a new `Data/process/05_regression_panel/<UTC time>/` containing
 - `run_summary.json`: inputs, warnings, units, choices, timing and runtime.
 
 There is no outcome regression, winsorization, standardization or missing-return
-imputation. All valid CRSP rows remain, including stocks outside the Reddit
-network, warm-up periods and rows with missing controls. Only invalid stock/date
-keys are dropped and counted. Exact duplicates are removed only after every
+imputation. All valid CRSP rows inside the requested output period remain,
+including stocks outside the Reddit network and rows with missing controls.
+Warm-up rows contribute to controls but are not written outside that period.
+Date exclusions and invalid stock/date keys are counted separately. Exact duplicates are removed only after every
 original CRSP column is reread and verified identical; a warning and dropped-row
 count are recorded. Conflicting duplicate keys raise an error.
 

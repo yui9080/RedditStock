@@ -7,6 +7,7 @@ See 05_build_regression_panel_README.md for input contracts and timing choices.
 from pathlib import Path
 from datetime import datetime, timezone
 import argparse
+import sys
 import hashlib
 import json
 import time
@@ -18,6 +19,9 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from scipy import sparse
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from regression_samples import SAMPLE_PERIODS as PERIODS
 
 BASELINE = ['ret_t1', 'ret_d', 'reddit_ret', 'ret_20_2', 'ret_120_21',
             'illiquidity']
@@ -185,7 +189,8 @@ def add_stock_controls(daily):
 
 
 def add_sic(daily, path, has_crsp_sic, log):
-    daily['sic_source_date'] = pd.NaT
+    original_keys = daily[['permno','date']].copy()
+    daily['sic_source_date'] = pd.Series(pd.NaT, index=daily.index, dtype='datetime64[ns]')
     if has_crsp_sic:
         daily['sic_source_date'] = daily.date
     elif path and Path(path).is_file():
@@ -196,33 +201,45 @@ def add_sic(daily, path, has_crsp_sic, log):
             return
         history['permno'] = numeric(history.permno)
         history['siccd'] = numeric(history.siccd)
-        history['start'] = pd.to_datetime(history.secinfostartdt, errors='coerce')
-        history['end'] = pd.to_datetime(history.secinfoenddt, errors='coerce')
+        history['start'] = pd.to_datetime(history.secinfostartdt, errors='coerce').astype('datetime64[ns]')
+        history['end'] = pd.to_datetime(history.secinfoenddt, errors='coerce').astype('datetime64[ns]')
         usable = history.permno.gt(0) & history.permno.mod(1).eq(0) & history.siccd.between(1,9999) & history.siccd.mod(1).eq(0)
         usable &= history.start.notna() & history.end.notna() & history.start.le(history.end)
         records = {int(p): f for p,f in history.loc[usable].groupby('permno')}
         conflicts = 0
-        for permno, positions in daily.groupby('permno', sort=False).indices.items():
+        started = time.perf_counter()
+        processed = 0
+        for number, (permno, positions) in enumerate(daily.groupby('permno', sort=False).indices.items(), 1):
+            processed += len(positions)
+            if number == 1 or number % 500 == 0:
+                print(f'SIC: {number:,} PERMNOs; visited {processed:,}/{len(daily):,} rows; {time.perf_counter()-started:.1f}s', flush=True)
             if permno not in records: continue
-            dates = daily.loc[positions, 'date'].to_numpy()
+            dates = daily.loc[positions, 'date'].to_numpy(dtype='datetime64[ns]')
             sic = np.full(len(positions), np.nan)
-            starts = np.full(len(positions), np.datetime64('NaT'), dtype='datetime64[ns]')
+            starts = np.full(len(positions), np.datetime64('NaT', 'ns'), dtype='datetime64[ns]')
             ambiguous = np.zeros(len(positions), dtype=bool)
             for row in records[permno].itertuples():
-                active = (dates >= row.start.to_datetime64()) & (dates <= row.end.to_datetime64())
+                start = row.start.to_datetime64().astype('datetime64[ns]')
+                end = row.end.to_datetime64().astype('datetime64[ns]')
+                active = (dates >= start) & (dates <= end)
                 ambiguous |= active & ~np.isnan(sic) & (sic != row.siccd)
                 sic[active] = row.siccd
                 old = starts[active]
-                starts[active] = np.maximum(np.where(np.isnat(old), row.start.to_datetime64(), old), row.start.to_datetime64())
-            sic[ambiguous] = np.nan; starts[ambiguous] = np.datetime64('NaT')
+                starts[active] = np.maximum(np.where(np.isnat(old), start, old), start)
+            sic[ambiguous] = np.nan; starts[ambiguous] = np.datetime64('NaT', 'ns')
             conflicts += int(ambiguous.sum())
             daily.loc[positions, 'siccd'] = sic
             daily.loc[positions, 'sic_source_date'] = starts
         if conflicts: notify(log, 'Conflicting effective SIC codes left missing.', count=conflicts)
+        print(f'SIC complete: {processed:,} rows; {time.perf_counter()-started:.1f}s', flush=True)
     else:
         notify(log, 'No point-in-time SIC history; SIC and industry returns remain missing.')
     valid = daily.siccd.between(1,9999) & daily.siccd.mod(1).eq(0)
     daily['siccd'] = daily.siccd.where(valid)
+    if not daily[['permno','date']].equals(original_keys):
+        raise ValueError('SIC assignment changed observation keys or dates')
+    if (daily.sic_source_date.notna() & daily.sic_source_date.gt(daily.date)).any():
+        raise ValueError('SIC assignment contains future effective dates')
 
 
 def monthly_me(daily):
@@ -278,8 +295,8 @@ def prepare_fundamentals(path, me_unit, be_unit, log):
 
 def add_bm(month, fundamentals):
     month['bm'] = np.nan
-    month['bm_available_date'] = pd.NaT
-    month['bm_measurement_date'] = pd.NaT
+    month['bm_available_date'] = pd.Series(pd.NaT, index=month.index, dtype='datetime64[ns]')
+    month['bm_measurement_date'] = pd.Series(pd.NaT, index=month.index, dtype='datetime64[ns]')
     if fundamentals is None or fundamentals.empty: return
     cutoff = month.monthend_cutoff.iloc[0]
     available = fundamentals.loc[fundamentals.available_date.le(cutoff)]
@@ -323,7 +340,7 @@ def load_factors(path, model, unit, log):
 
 def add_idio(daily, factors, model, window, minimum):
     daily['idio_vol'] = np.nan
-    daily['idio_vol_max_date'] = pd.NaT
+    daily['idio_vol_max_date'] = pd.Series(pd.NaT, index=daily.index, dtype='datetime64[ns]')
     if factors is None: return {'estimated_windows':0, 'rank_deficient_windows':0}
     aligned = factors.reindex(pd.DatetimeIndex(daily.date))
     columns = ['MKT_RF','SMB','HML'] + (['RMW','CMA'] if model == 'FF5' else [])
@@ -393,7 +410,7 @@ def reddit_returns(month, network):
     month['n_reddit_peers'] = np.nan
     month['n_valid_peers_d'] = np.nan
     month['has_network_node'] = False
-    month['network_window_end'] = pd.NaT
+    month['network_window_end'] = pd.Series(pd.NaT, index=month.index, dtype='datetime64[ns]')
     if network is None: return
     nodes, adjacency, binary, cutoff = network
     degree = np.diff(adjacency.indptr)
@@ -495,7 +512,11 @@ def main():
     parser.add_argument('--idio-window',type=int,default=20)
     parser.add_argument('--idio-minimum',type=int,default=15)
     parser.add_argument('--output-dir',type=Path)
+    parser.add_argument('--start',default=PERIODS['full_sample'][0])
+    parser.add_argument('--end',default=PERIODS['full_sample'][1])
     args=parser.parse_args()
+    sample_start,sample_end=pd.Timestamp(args.start),pd.Timestamp(args.end)
+    if sample_start>sample_end:parser.error('start must not exceed end')
     if not 2 <= args.idio_minimum <= args.idio_window:parser.error('Require 2 <= minimum <= window')
     root=Path(__file__).resolve().parents[1]
     network_run=args.network_run or latest_network(root)
@@ -516,6 +537,7 @@ def main():
     input_stats={str(p):(p.stat().st_size,p.stat().st_mtime_ns) for p in inputs}
     print('Network:',network_run,'\nOutput:',out,flush=True)
     daily,info=load_crsp(crsp,args.me_unit,log)
+    original_keys = daily[['permno','date']].copy()
     print(f'Loaded {len(daily):,} CRSP observations; building lagged stock controls',flush=True)
     daily=add_stock_controls(daily)
     add_sic(daily,sic,info['has_crsp_sic'],log)
@@ -523,14 +545,28 @@ def main():
     fundamentals=prepare_fundamentals(args.fundamentals,args.me_unit,args.book_equity_unit,log)
     factors=load_factors(args.factors,args.factor_model,args.factor_unit,log)
     idio_info=add_idio(daily,factors,args.factor_model,args.idio_window,args.idio_minimum)
+    if not daily[['permno','date']].equals(original_keys):
+        raise ValueError('Control construction changed observation keys or dates')
+    del original_keys
     if (daily.me_weight_lag1.notna() & (daily.lag1_date.isna() | daily.lag1_date.ge(daily.date))).any():
         raise ValueError('Industry ME weight is not lagged')
     temp=out/'04_regression_panel.parquet.partial';dest=out/'04_regression_panel.parquet'
+    sample_rows=int(daily.date.between(sample_start,sample_end).sum())
+    if not sample_rows:raise ValueError('No observations in output sample period')
+    sample_dates=daily.loc[daily.date.between(sample_start,sample_end),'date']
+    actual_sample={'min_date':str(sample_dates.min().date()),'max_date':str(sample_dates.max().date()),
+                   'n_dates':int(sample_dates.nunique()),'n_obs':sample_rows}
+    info['observations_excluded_sample_dates']=len(daily)-sample_rows
     writer=None;output_rows=0;month_info=[]
+    integrity_columns=['permno','date','siccd','sic_source_date']
+    expected_signature=0
     try:
         for index,(month,positions) in enumerate(daily.groupby('network_month',sort=True).indices.items(),1):
             tick=time.perf_counter()
             frame=daily.iloc[positions].copy()
+            frame=frame.loc[frame.date.between(sample_start,sample_end)].copy()
+            if frame.empty:continue
+            print(f'Panel month {month}: processing {len(frame):,} rows; completed {output_rows:,}/{sample_rows:,}; elapsed {time.perf_counter()-started:.1f}s',flush=True)
             frame=frame.merge(ends,on=['permno','network_month'],how='left',validate='many_to_one')
             frame['me_lag_monthend']=frame.me
             frame['monthend_cutoff']=(pd.Period(month,freq='M')-1).end_time.normalize()
@@ -550,23 +586,44 @@ def main():
                  pa.bool_() if col=='has_network_node' else pa.float64()) for col in frame.columns
             ])
             table=pa.Table.from_pandas(frame,schema=panel_schema,preserve_index=False)
+            expected_signature += int(pd.util.hash_pandas_object(
+                table.select(integrity_columns).to_pandas(),index=False).to_numpy(dtype=np.uint64).sum(dtype=np.uint64))
             if writer is None:writer=pq.ParquetWriter(temp,panel_schema,compression='zstd')
             writer.write_table(table,row_group_size=100_000)
             output_rows+=len(frame)
             month_info.append({'network_month':month,'rows':len(frame),'network_available':network is not None,
                                'network_nodes_with_crsp':int(frame.has_network_node.sum()),
                                'rows_with_reddit_ret':int(frame.reddit_ret.notna().sum()),'seconds':time.perf_counter()-tick})
-            if index==1 or index%12==0:print(f'{month}: {len(frame):,} rows, Reddit return available on {int(frame.reddit_ret.notna().sum()):,}',flush=True)
+            print(f'Panel month {month} complete: {len(frame):,} rows; Reddit return available on {int(frame.reddit_ret.notna().sum()):,}; {time.perf_counter()-tick:.1f}s',flush=True)
     finally:
         if writer:writer.close()
-    if output_rows!=len(daily) or pq.read_metadata(temp).num_rows!=output_rows:raise ValueError('Panel row reconciliation failed')
+    if output_rows!=sample_rows or pq.read_metadata(temp).num_rows!=output_rows:raise ValueError('Panel row reconciliation failed')
+    actual_signature=0
+    with pq.ParquetFile(temp) as written:
+        for column in DATE_COLUMNS:
+            if written.schema_arrow.field(column).type != pa.timestamp('ns'):
+                raise ValueError(f'Unexpected output date dtype: {column}')
+        for batch in written.iter_batches(columns=integrity_columns):
+            checked=batch.to_pandas()
+            if checked.date.isna().any():raise ValueError('Output has missing observation dates')
+            if (checked.sic_source_date.notna() & checked.sic_source_date.gt(checked.date)).any():
+                raise ValueError('Output SIC effective date exceeds observation date')
+            actual_signature += int(pd.util.hash_pandas_object(checked,index=False).to_numpy(dtype=np.uint64).sum(dtype=np.uint64))
+    if actual_signature % (1 << 64) != expected_signature % (1 << 64):
+        raise ValueError('Output PERMNO/date/SIC values changed during serialization')
     for path,(size,modified) in input_stats.items():
         if (Path(path).stat().st_size,Path(path).stat().st_mtime_ns)!=(size,modified):raise ValueError('Input changed during run')
-    temp.replace(dest)
-    diagnostics=write_diagnostics(dest,out,info)
+    # Keep the panel provisional through all validation and diagnostics.
+    diagnostics=write_diagnostics(temp,out,info)
     absent=[r['network_month'] for r in month_info if not r['network_available']]
     if absent:notify(log,'CRSP months without a corresponding network retained with missing peer returns.',months=absent)
     report={'status':'complete_with_warnings' if log else 'complete','output':str(dest),'output_rows':output_rows,
+            'sample_periods':PERIODS,'requested_start':args.start,'requested_end':args.end,
+            'actual_sample':actual_sample,
+            'integrity_checks':{'observation_keys_preserved':True,'date_columns_unit':'ns',
+                                'sic_and_key_serialization_verified':True,'output_rows_reconciled':True},
+            'warmup_policy':'Full raw history for controls; output dates restricted only after stock controls and monthly ME.',
+            'observations_excluded_sample_dates':len(daily)-sample_rows,
             'network_run':str(network_run),'crsp_source':str(crsp),'crsp_sha256':file_hash(crsp),
             'input_stats':input_stats,'diagnostics':diagnostics,'months':month_info,'warnings':log,
             'me_unit':args.me_unit,'book_equity_unit':args.book_equity_unit,'me_method':info['me_method'],
@@ -580,7 +637,18 @@ def main():
             'industry_weight':'previous stock trading observation ME; all CRSP stocks, same effective two-digit SIC, focal excluded',
             'baseline_variables':BASELINE, 'missing_values_imputed':False,'winsorized':False,'lookahead_checks':'passed for every output month',
             'runtime_seconds':time.perf_counter()-started}
-    (out/'run_summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+    summary_path=out/'run_summary.json'
+    summary_temp=out/'run_summary.json.partial'
+    try:
+        summary_temp.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+        temp.replace(dest)
+        summary_temp.replace(summary_path)
+    except BaseException:
+        # A completed manifest is the publication marker; interrupted runs must
+        # not expose a formally named panel without that marker.
+        if not summary_path.exists() and dest.exists():
+            dest.replace(temp)
+        raise
     print('Finished:',dest,flush=True)
 
 

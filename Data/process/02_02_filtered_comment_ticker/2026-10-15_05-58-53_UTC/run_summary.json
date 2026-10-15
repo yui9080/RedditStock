@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "source": "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_ticker_matching\\2026-10-15_02-43-43_UTC\\comment_ticker_long.parquet",
+  "source_sha256": "d171b4885ad0d6fe0707316819d68842cd3bebeab87648e9beb041a6288bfd78",
+  "review_file": "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_01_permno_frequency_review\\2026-10-15_02-43-43_UTC\\top300_permno_review.csv",
+  "review_sha256": "49921c9fc63927bdec27bec686bf1816ccfa38e744354d8917cb9a62b29d661e",
+  "review_rows": 300,
+  "schema_version": 2,
+  "review_unit": "permno",
+  "excluded_permnos": [
+    13447,
+    14503,
+    15293,
+    16965,
+    52978,
+    67467,
+    75285,
+    79323,
+    85926,
+    92478
+  ],
+  "excluded_permno_count": 10,
+  "before": {
+    "rows": 10049767,
+    "month_min": "2012-05",
+    "month_max": "2020-07",
+    "missing_month_rows": 0,
+    "unique_tickers": 3936,
+    "unique_permnos": 3767,
+    "unique_comments": 5951443,
+    "unique_threads": 241473,
+    "unique_authors": null
+  },
+  "after": {
+    "rows": 4994423,
+    "month_min": "2012-05",
+    "month_max": "2020-07",
+    "missing_month_rows": 0,
+    "unique_tickers": 3927,
+    "unique_permnos": 3757,
+    "unique_comments": 3742825,
+    "unique_threads": 221914,
+    "unique_authors": null
+  },
+  "removed_mentions": 5055344,
+  "comments_losing_all_tickers": 2208618,
+  "output": "c:\\Users\\eagle\\RedditStock\\Data\\process\\02_02_filtered_comment_ticker\\2026-10-15_05-58-53_UTC\\comment_ticker_cleaned.parquet",
+  "processing_seconds": 49.40278010000111
+}

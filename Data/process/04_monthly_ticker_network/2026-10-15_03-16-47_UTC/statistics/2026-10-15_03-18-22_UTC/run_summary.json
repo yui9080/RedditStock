@@ -1,0 +1,125 @@
+{
+  "status": "complete",
+  "network_run": "c:\\Users\\eagle\\RedditStock\\Data\\process\\04_monthly_ticker_network\\2026-10-15_03-16-47_UTC",
+  "crsp_source": "c:\\Users\\eagle\\RedditStock\\Data\\raw\\stock\\RAW_crsp.csv",
+  "restricted_years": [
+    2019,
+    2020
+  ],
+  "restricted_months": 20,
+  "restricted_month_min": "2019-01",
+  "restricted_month_max": "2020-08",
+  "distribution_2019_2020": [
+    {
+      "metric": "N_stocks_per_month",
+      "N": 20,
+      "mean": 3556.4,
+      "std": 13.421898838132131,
+      "median": 3558.0,
+      "p90": 3569.1,
+      "min": 3531.0,
+      "max": 3583.0
+    },
+    {
+      "metric": "stocks_with_redditlinkage_per_month",
+      "N": 20,
+      "mean": 1703.05,
+      "std": 233.98841064418014,
+      "median": 1574.0,
+      "p90": 2081.7000000000003,
+      "min": 1483.0,
+      "max": 2268.0
+    },
+    {
+      "metric": "coverage_pct_per_month",
+      "N": 20,
+      "mean": 47.898249509221024,
+      "std": 6.663885199720769,
+      "median": 44.1480009679444,
+      "p90": 58.75284293039038,
+      "min": 41.62222845916363,
+      "max": 63.654223968565816
+    },
+    {
+      "metric": "redditlinkages_per_focal_firm",
+      "N": 35524,
+      "mean": 331.14024321585407,
+      "std": 372.1794676703709,
+      "median": 195.0,
+      "p90": 846.0,
+      "min": 0.0,
+      "max": 2207.0
+    },
+    {
+      "metric": "common_threads_per_stockpair",
+      "N": 5881713,
+      "mean": 5.192610384083684,
+      "std": 14.715136131369182,
+      "median": 2.0,
+      "p90": 10.0,
+      "min": 1.0,
+      "max": 1509.0
+    }
+  ],
+  "months": 94,
+  "invalid_crsp_key_rows": 0,
+  "stock_population": "distinct PERMNO with at least one valid CRSP observation that calendar month",
+  "covered_stocks": "CRSP population intersect network nodes with degree > 0; excludes isolates",
+  "focal_firm_population": "all network node-months, including isolates; not restricted to CRSP intersection",
+  "pair_population": "all undirected edge-months; raw n_common_threads",
+  "std_ddof": 1,
+  "quantile_method": "linear; exact frequency histogram",
+  "distribution": [
+    {
+      "metric": "N_stocks_per_month",
+      "N": 94,
+      "mean": 3621.9574468085107,
+      "std": 64.81884016798625,
+      "median": 3609.5,
+      "p90": 3726.7,
+      "min": 3531.0,
+      "max": 3754.0
+    },
+    {
+      "metric": "stocks_with_redditlinkage_per_month",
+      "N": 94,
+      "mean": 971.7765957446809,
+      "std": 573.6919137651055,
+      "median": 1161.0,
+      "p90": 1576.4,
+      "min": 106.0,
+      "max": 2268.0
+    },
+    {
+      "metric": "coverage_pct_per_month",
+      "N": 94,
+      "mean": 27.032919568984372,
+      "std": 16.21447282468933,
+      "median": 32.37964053212391,
+      "p90": 44.201805065071575,
+      "min": 2.928985907709312,
+      "max": 63.654223968565816
+    },
+    {
+      "metric": "redditlinkages_per_focal_firm",
+      "N": 97307,
+      "mean": 155.91124996146218,
+      "std": 271.40272285771545,
+      "median": 44.0,
+      "p90": 445.0,
+      "min": 0.0,
+      "max": 2207.0
+    },
+    {
+      "metric": "common_threads_per_stockpair",
+      "N": 7585628,
+      "mean": 4.444094279339825,
+      "std": 13.361908134633161,
+      "median": 1.0,
+      "p90": 8.0,
+      "min": 1.0,
+      "max": 1509.0
+    }
+  ],
+  "runtime_seconds": 38.62881610000113
+}

@@ -1,7 +1,7 @@
 """Unweighted baseline daily regressions, day FE and PERMNO-clustered SE.
 
-python Notebook/05_01_baseline_regression.py [--sample both|baseline|2019_2020] [--panel PATH]
-Default runs both the 2014-06/2020-06 baseline and 2019/2020 network sample. Model 3 is reported as
+python Notebook/05_01_baseline_regression.py [--sample both|full_sample|late_sample] [--panel PATH]
+Default runs both the 2012-11/2020-08 full sample and 2019-01/2020-08 late sample. Model 3 is reported as
 not estimable when its full complete-case sample is empty; controls are never
 silently removed. Return coefficients use actual percent/percent units.
 """
@@ -16,6 +16,8 @@ import time
 import warnings
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from regression_samples import SAMPLE_PERIODS as PERIODS, SAMPLE_ALIASES
 LOCAL_DEPS = ROOT/'.tmp_regression_deps'
 if LOCAL_DEPS.is_dir(): sys.path.insert(0,str(LOCAL_DEPS))
 import numpy as np
@@ -213,8 +215,8 @@ def interpretation(info):
 
 
 SAMPLE_CONFIGS = {
-    'baseline': {'start':'2014-06-01','end':'2020-06-30','network_years':None},
-    '2019_2020': {'start':'2019-01-01','end':'2020-12-31','network_years':(2019,2020)},
+    'full_sample': {'start':PERIODS['full_sample'][0],'end':PERIODS['full_sample'][1],'network_years':None},
+    'late_sample': {'start':PERIODS['late_sample'][0],'end':PERIODS['late_sample'][1],'network_years':(2019,2020)},
 }
 
 
@@ -274,14 +276,14 @@ def run_regression(panel,start,end,prefix,network_years=None,output_dir=None):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--sample',choices=['both',*SAMPLE_CONFIGS],default='both')
+    parser.add_argument('--sample',choices=['both',*SAMPLE_CONFIGS,*SAMPLE_ALIASES],default='both')
     parser.add_argument('--panel',type=Path)
     parser.add_argument('--start',help='Optional date override for selected sample(s)')
     parser.add_argument('--end',help='Optional date override for selected sample(s)')
     parser.add_argument('--output-dir',type=Path)
     args=parser.parse_args()
     panel=args.panel or latest_panel()
-    selected=list(SAMPLE_CONFIGS) if args.sample=='both' else [args.sample]
+    selected=list(SAMPLE_CONFIGS) if args.sample=='both' else [SAMPLE_ALIASES.get(args.sample,args.sample)]
     plans=[]
     for name in selected:
         config=SAMPLE_CONFIGS[name]
@@ -296,7 +298,7 @@ def main():
         print('Sample:',name,flush=True)
         output=run_regression(panel,start,end,'05_01',config['network_years'],run_root/name)
         outputs[name]=str(output)
-    manifest={'stage':'05_01','status':'complete','panel':str(panel),'samples':outputs,
+    manifest={'sample_periods':PERIODS,'stage':'05_01','status':'complete','panel':str(panel),'samples':outputs,
               'output_directory':str(run_root)}
     (run_root/'run_summary.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
     print('Combined output:',run_root,flush=True)

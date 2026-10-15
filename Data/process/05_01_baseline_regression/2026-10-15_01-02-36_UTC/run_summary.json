@@ -1,0 +1,20 @@
+{
+  "sample_periods": {
+    "full_sample": [
+      "2012-10-01",
+      "2020-09-30"
+    ],
+    "late_sample": [
+      "2019-01-01",
+      "2020-09-30"
+    ]
+  },
+  "stage": "05_01",
+  "status": "complete",
+  "panel": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_regression_panel\\2026-10-13_06-18-08_UTC\\04_regression_panel.parquet",
+  "samples": {
+    "full_sample": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_01_baseline_regression\\2026-10-15_01-02-36_UTC\\full_sample",
+    "late_sample": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_01_baseline_regression\\2026-10-15_01-02-36_UTC\\late_sample"
+  },
+  "output_directory": "C:\\Users\\eagle\\RedditStock\\Data\\process\\05_01_baseline_regression\\2026-10-15_01-02-36_UTC"
+}
